@@ -1,11 +1,12 @@
-# Ultra-Light-Fast-Generic-Face-Detector-1MB 超轻量级通用人脸检测模型
+# Ultra-Light-Fast-Generic-Face-Detector-1MB 
+#超轻量级通用人脸检测模型
 ![img1](https://github.com/Linzaer/Ultra-Light-Fast-Generic-Face-Detector-1MB/blob/master/readme_imgs/5.jpg)
 该模型设计是针对**边缘计算设备**或**低算力设备**(如用ARM推理)设计的一款实时超轻量级通用人脸检测模型，旨在能在低算力设备中用ARM进行实时的通用场景的人脸检测推理，当然常规的PC环境（x86 cpu & GPU 同样适用）。有如下几个特点：
 
  - 在模型大小方面，默认FP32精度下（.pth）文件大小为 **1.1MB**，推理框架int8量化后代大小约为 **300KB** 左右。
- - 在模型计算量方面，320*240的输入分辨率下仅 **90~109 MFlops**左右，足够轻量。
+ - 在模型计算量方面，320x240的输入分辨率下仅 **90~109 MFlops**左右，足够轻量。
  - 模型设计有两个版本，version-slim(主干精简速度略快)，version-RFB(加入了修改后的RFB模块，精度更高)。
- - 提供了320*240、640*480不同输入分辨率下使用wideface训练的预训练模型，更好的工作于不同的应用场景。
+ - 提供了320x240、640x480不同输入分辨率下使用wideface训练的预训练模型，更好的工作于不同的应用场景。
 
 
 ## 测试过正常的运行环境
@@ -16,7 +17,7 @@
 
 ## 精度、速度、场景测试
 训练集是使用[Retiaface](https://github.com/deepinsight/insightface/blob/master/RetinaFace/README.md )提供的清理过的wideface标签配合widerface数据集生成VOC训练集（PS:以下测试结果均为本人测试，结果可能有部分出入）。
-###Widerface测试
+### Widerface测试
  - 在WIDER FACE test集测试精度（单尺度输入分辨率：**VGA 320*240**） 
 
 模型|Easy Set|Medium Set|Hard Set
@@ -37,7 +38,8 @@ libfacedetection v2|0.2 |0.218       |0.147
 version-slim|0.769     |0.733       |0.486
 version-RFB|0.851     |0.81       |0.541
 
-###终端设备推理速度
+### 终端设备推理速度
+
 - 树莓派4B MNN推理测试耗时**(ms)**（ARM/A72*4/1.5GHz/输入分辨率 : **320*240** /int8量化） 
 
 模型|1核|2核|3核|4核
@@ -54,10 +56,11 @@ version-RFB|TODO     |TODO       |TODO|TODO
 ## 生成VOC格式训练数据集以及训练流程
 
 1.下载widerface官网数据集或者下载我提供的训练集解压放入./data文件夹内：
+
   （1）过滤掉10px*10px 小人脸后的干净widerface数据压缩包 ：[百度云盘 提取码：x5gt](https://pan.baidu.com/s/1m600pp-AsNot6XgIiqDlOw )
-（2）未过滤小人脸的完整widerface数据压缩包 ：[百度云盘 提取码：8748
-       ](https://pan.baidu.com/s/1ijvZFSb3l7C63Nbz7i6IuQ )
-2.**（PS:如果下载的是过滤后的数据包（1），则不需要执行这步）**由于widerface存在很多极小的不清楚的人脸，不利于高效模型的收敛，所以需要过滤,默认过滤 人脸大小10像素*10像素以下的人脸。运行./data/wider_face_2_voc_add_landmark.py
+  （2）未过滤小人脸的完整widerface数据压缩包 ：[百度云盘 提取码：8748](https://pan.baidu.com/s/1ijvZFSb3l7C63Nbz7i6IuQ )
+  
+2.**（PS:如果下载的是过滤后的数据包（1），则不需要执行这步）** 由于widerface存在很多极小的不清楚的人脸，不利于高效模型的收敛，所以需要过滤,默认过滤 人脸大小10像素*10像素以下的人脸。运行./data/wider_face_2_voc_add_landmark.py
 ```Python
  python3 ./data/wider_face_2_voc_add_landmark.py
 ```
