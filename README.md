@@ -40,35 +40,36 @@ version-RFB|0.851     |0.81       |0.541
 
 ### 终端设备推理速度
 
-- 树莓派4B MNN推理测试耗时**(ms)**（ARM/A72*4/1.5GHz/输入分辨率 : **320*240** /int8量化） 
+- 树莓派4B MNN推理测试耗时 **(ms)**（ARM/A72x4/1.5GHz/输入分辨率 : **320x240** /int8量化） 
 
 模型|1核|2核|3核|4核
-------|--------|----------|--------
+------|--------|----------|--------|--------
 libfacedetection v1|28    |16|12|9.7
 官方 Retinaface-Mobilenet-0.25 (Mxnet)   |46|25|18.5|15
 version-slim|29     |16       |12|9.5
 version-RFB|TODO     |TODO       |TODO|TODO
 
-###场景测试
+### 场景测试
 - 若干不同场景视频大致有效人脸检出数量测试：
 ![img1](https://github.com/Linzaer/Ultra-Light-Fast-Generic-Face-Detector-1MB/blob/master/readme_imgs/scene_test.png)
 
 ## 生成VOC格式训练数据集以及训练流程
 
-1.下载widerface官网数据集或者下载我提供的训练集解压放入./data文件夹内：
+1. 下载widerface官网数据集或者下载我提供的训练集解压放入./data文件夹内：
 
   （1）过滤掉10px*10px 小人脸后的干净widerface数据压缩包 ：[百度云盘 提取码：x5gt](https://pan.baidu.com/s/1m600pp-AsNot6XgIiqDlOw )
+  
   （2）未过滤小人脸的完整widerface数据压缩包 ：[百度云盘 提取码：8748](https://pan.baidu.com/s/1ijvZFSb3l7C63Nbz7i6IuQ )
   
-2.**（PS:如果下载的是过滤后的数据包（1），则不需要执行这步）** 由于widerface存在很多极小的不清楚的人脸，不利于高效模型的收敛，所以需要过滤,默认过滤 人脸大小10像素*10像素以下的人脸。运行./data/wider_face_2_voc_add_landmark.py
+2. **（PS:如果下载的是过滤后的数据包（1），则不需要执行这步）** 由于widerface存在很多极小的不清楚的人脸，不利于高效模型的收敛，所以需要过滤,默认过滤 人脸大小10像素*10像素以下的人脸。运行./data/wider_face_2_voc_add_landmark.py
 ```Python
  python3 ./data/wider_face_2_voc_add_landmark.py
 ```
 程序运行和完毕后会在./data目录下生成 **wider_face_add_lm_10_10**文件夹，该文件夹数据和数据包（1）解压后相同。
 
-3.至此VOC训练集准备完毕，项目根目录下分别有**train_mb_tiny_fd.sh**和**train_mb_tiny_RFB_fd.sh**两个脚本，前者用于训练slim版本模型，后者用于训练RFB版本模型，默认参数已设置好，参数如需微调请参考./train.py中关于各训练超参数的说明。
+3. 至此VOC训练集准备完毕，项目根目录下分别有**train_mb_tiny_fd.sh**和**train_mb_tiny_RFB_fd.sh**两个脚本，前者用于训练slim版本模型，后者用于训练RFB版本模型，默认参数已设置好，参数如需微调请参考./train.py中关于各训练超参数的说明。
 
-4.运行**train_mb_tiny_fd.sh**和**train_mb_tiny_RFB_fd.sh**即可
+4. 运行**train_mb_tiny_fd.sh**和**train_mb_tiny_RFB_fd.sh**即可
 ```Shell
 sh train_mb_tiny_fd.sh 或者 sh train_mb_tiny_RFB_fd.sh
 ```
@@ -79,10 +80,10 @@ sh train_mb_tiny_fd.sh 或者 sh train_mb_tiny_RFB_fd.sh
 ![img1](https://github.com/Linzaer/Ultra-Light-Fast-Generic-Face-Detector-1MB/blob/master/readme_imgs/4.jpg)
 ## PS
 
- - 若生产实际场景为中近距离、人脸大、人脸数少，则建议采用输入尺寸input_size：320（320*240）分辨率训练，并采用320*240图片大小输入进行预测推理。
+ - 若生产实际场景为中近距离、人脸大、人脸数少，则建议采用输入尺寸input_size：320（320x240）分辨率训练，并采用320x240图片大小输入进行预测推理。
  - 若生产实际场景为中远距离、人脸中小、人脸数多，则建议采用：
- （1）输入尺寸input_size：320（320*240）分辨率训练，并采用640*480图片大小输入进行预测推理。
- （2）输入尺寸input_size：640（640*480）分辨率训练，并采用640*480图片大小或者更大输入尺寸输入进行预测推理。
+ （1）输入尺寸input_size：320（320x240）分辨率训练，并采用640x480图片大小输入进行预测推理。
+ （2）输入尺寸input_size：640（640x480）分辨率训练，并采用640x480图片大小或者更大输入尺寸输入进行预测推理。
  - 各个场景的最佳效果需要调整输入分辨率从而在速度和精度中间取得平衡。
  - 过大的输入分辨率虽然会增强小人脸的召回率，但是也会提高大、近距离人脸的误报率，而且推理速度延迟成倍增加。
  - 过小的输入分辨率虽然会明显加快推理速度，但是会大幅降低小人脸的召回率。
