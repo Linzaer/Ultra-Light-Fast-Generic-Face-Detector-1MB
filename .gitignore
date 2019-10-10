@@ -1,0 +1,8 @@
+.idea
+data/wider_face_add_lm_10_10
+
+__pycache__/
+*.py[cod]
+*$py.class
+
+detect_imgs_results
