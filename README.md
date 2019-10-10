@@ -1,5 +1,5 @@
 # Ultra-Light-Fast-Generic-Face-Detector-1MB 超轻量级通用人脸检测模型
-![img1](https://github.com/deepinsight/insightface/blob/master/resources/11513D05.jpg)
+![img1](https://github.com/Linzaer/Ultra-Light-Fast-Generic-Face-Detector-1MB/blob/master/readme_imgs/5.jpg)
 该模型设计是针对**边缘计算设备**或**低算力设备**(如用ARM推理)设计的一款实时超轻量级通用人脸检测模型，旨在能在低算力设备中用ARM进行实时的通用场景的人脸检测推理，当然常规的PC环境（x86 cpu & GPU 同样适用）。有如下几个特点：
 
  - 在模型大小方面，默认FP32精度下（.pth）文件大小为 **1.1MB**，推理框架int8量化后代大小约为 **300KB** 左右。
@@ -49,7 +49,7 @@ version-RFB|TODO     |TODO       |TODO|TODO
 
 ###场景测试
 - 若干不同场景视频大致有效人脸检出数量测试：
-![img1](https://github.com/deepinsight/insightface/blob/master/resources/11513D05.jpg)
+![img1](https://github.com/Linzaer/Ultra-Light-Fast-Generic-Face-Detector-1MB/blob/master/readme_imgs/scene_test.png)
 
 ## 生成VOC格式训练数据集以及训练流程
 
@@ -71,9 +71,9 @@ sh train_mb_tiny_fd.sh 或者 sh train_mb_tiny_RFB_fd.sh
 ```
 
 ## 检测图片效果
-![img1](https://github.com/deepinsight/insightface/blob/master/resources/11513D05.jpg)
-![img1](https://github.com/deepinsight/insightface/blob/master/resources/11513D05.jpg)
-![img1](https://github.com/deepinsight/insightface/blob/master/resources/11513D05.jpg)
+![img1](https://github.com/Linzaer/Ultra-Light-Fast-Generic-Face-Detector-1MB/blob/master/readme_imgs/1.jpg)
+![img1](https://github.com/Linzaer/Ultra-Light-Fast-Generic-Face-Detector-1MB/blob/master/readme_imgs/2.jpg)
+![img1](https://github.com/Linzaer/Ultra-Light-Fast-Generic-Face-Detector-1MB/blob/master/readme_imgs/4.jpg)
 ## PS
 
  - 若生产实际场景为中近距离、人脸大、人脸数少，则建议采用输入尺寸input_size：320（320*240）分辨率训练，并采用320*240图片大小输入进行预测推理。
