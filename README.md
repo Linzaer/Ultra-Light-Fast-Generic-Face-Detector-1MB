@@ -95,8 +95,10 @@ sh train_mb_tiny_fd.sh 或者 sh train_mb_tiny_RFB_fd.sh
 ## TODO LIST
 
  - 加入widerface测试代码
+ - 完善部分测试数据
  
 ##  Reference
  - [pytorch-ssd](https://github.com/qfgaohao/pytorch-ssd)
  - [libfacedetection](https://github.com/ShiqiYu/libfacedetection/)
  - [RFBNet](https://github.com/ruinmessi/RFBNet)
+ - [Retiaface]https://github.com/deepinsight/insightface/blob/master/RetinaFace/README.md)
