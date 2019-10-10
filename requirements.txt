@@ -1,0 +1,11 @@
+numpy
+torch
+opencv_python
+torchvision
+typing
+torchstat
+torchsummary
+ptflops
+matplotlib
+onnx
+onnxruntime
