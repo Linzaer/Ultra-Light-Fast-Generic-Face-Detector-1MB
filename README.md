@@ -103,3 +103,5 @@ sh train_mb_tiny_fd.sh 或者 sh train_mb_tiny_RFB_fd.sh
  - [libfacedetection](https://github.com/ShiqiYu/libfacedetection/)
  - [RFBNet](https://github.com/ruinmessi/RFBNet)
  - [Retiaface](https://github.com/deepinsight/insightface/blob/master/RetinaFace/README.md)
+ 
+##  如果有帮助，欢迎star!
