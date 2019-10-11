@@ -23,7 +23,7 @@ label_path = "./models/voc-model-labels.txt"
 test_device = "cuda:0"
 
 candidate_size = 1500
-threshold = 0.6
+threshold = 0.7
 
 class_names = [name.strip() for name in open(label_path).readlines()]
 if net_type == 'mb_tiny_fd':
