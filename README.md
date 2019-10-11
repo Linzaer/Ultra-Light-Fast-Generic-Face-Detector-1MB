@@ -1,12 +1,12 @@
 # Ultra-Light-Fast-Generic-Face-Detector-1MB 
 # 超轻量级通用人脸检测模型
 ![img1](https://github.com/Linzaer/Ultra-Light-Fast-Generic-Face-Detector-1MB/blob/master/readme_imgs/5.jpg)
-该模型设计是针对**边缘计算设备**或**低算力设备**(如用ARM推理)设计的一款实时超轻量级通用人脸检测模型，旨在能在低算力设备中用ARM进行实时的通用场景的人脸检测推理，当然常规的PC环境（x86 cpu & GPU 同样适用）。有如下几个特点：
+该模型设计是针对**边缘计算设备**或**低算力设备**(如用ARM推理)设计的一款实时超轻量级通用人脸检测模型，旨在能在低算力设备中如用ARM进行实时的通用场景的人脸检测推理，当然常规的PC环境（x86 cpu & GPU 同样适用）。有如下几个特点：
 
  - 在模型大小方面，默认FP32精度下（.pth）文件大小为 **1.1MB**，推理框架int8量化后大小为 **300KB** 左右。
  - 在模型计算量方面，320x240的输入分辨率下仅 **90~109 MFlops**左右，足够轻量。
  - 模型设计有两个版本，version-slim(主干精简速度略快)，version-RFB(加入了修改后的RFB模块，精度更高)。
- - 提供了320x240、640x480不同输入分辨率下使用wideface训练的预训练模型，更好的工作于不同的应用场景。
+ - 提供了320x240、640x480不同输入分辨率下使用widerface训练的预训练模型，更好的工作于不同的应用场景。
  - 无特殊算子，支持onnx导出，便于移植推理。
 
 
@@ -16,8 +16,8 @@
 - Pytorch1.2
 - CUDA10.0 + CUDNN7.6
 
-## 精度、速度、场景测试
-训练集是使用[Retinaface](https://github.com/deepinsight/insightface/blob/master/RetinaFace/README.md )提供的清理过的wideface标签配合widerface数据集生成VOC训练集（PS:以下测试结果均为本人测试，结果可能有部分出入）。
+## 精度、速度、场景测试、模型大小比较
+训练集是使用[Retinaface](https://github.com/deepinsight/insightface/blob/master/RetinaFace/README.md )提供的清理过的widerface标签配合widerface数据集生成VOC训练集（PS:以下测试结果均为本人测试，结果可能有部分出入）。
 ### Widerface测试
  - 在WIDER FACE test集测试精度（单尺度输入分辨率：**320*240**） 
 
@@ -48,7 +48,7 @@ version-RFB|0.851     |**0.81**       |**0.541**
 libfacedetection v1|**28**    |**16**|**12**|9.7
 官方 Retinaface-Mobilenet-0.25 (Mxnet)   |46|25|18.5|15
 version-slim|29     |**16**       |**12**|**9.5**
-version-RFB|TODO     |TODO       |TODO|TODO
+version-RFB|35     |19.6       |14.8| 11
 
 ### 场景测试
 - 若干不同场景视频大致有效人脸检出数量测试（单位：个）（分辨率：**VGA 640*480**，阈值0.6） ：
@@ -58,6 +58,17 @@ version-RFB|TODO     |TODO       |TODO|TODO
 libfacedetection v1| 6599   |4571|1899|7490|2818
 官方 Retinaface-Mobilenet-0.25 (Mxnet) |4415|4897|2026|7882|2557
 version-RFB|**10339** |**10444** |**4017**|**13363**|**3403**
+
+### 模型大小比较
+- 若干主流开源轻量级人脸检测模型大小比较 ：
+
+模型|模型文件大小（MB）
+------|--------
+libfacedetection v1（caffe）| 2.58
+libfacedetection v2（caffe）| 3.34
+官方 Retinaface-Mobilenet-0.25 (Mxnet) | 1.68
+version-slim| **1.04**
+version-RFB| **1.11** 
 
 ## 生成VOC格式训练数据集以及训练流程
 
@@ -97,7 +108,7 @@ version-RFB|**10339** |**10444** |**4017**|**13363**|**3403**
 sh train_mb_tiny_fd.sh 或者 sh train_mb_tiny_RFB_fd.sh
 ```
 
-## 检测图片效果
+## 检测图片效果（输入分辨率：640x480）
 ![img1](https://github.com/Linzaer/Ultra-Light-Fast-Generic-Face-Detector-1MB/blob/master/readme_imgs/1.jpg)
 ![img1](https://github.com/Linzaer/Ultra-Light-Fast-Generic-Face-Detector-1MB/blob/master/readme_imgs/2.jpg)
 ![img1](https://github.com/Linzaer/Ultra-Light-Fast-Generic-Face-Detector-1MB/blob/master/readme_imgs/4.jpg)
@@ -125,6 +136,8 @@ sh train_mb_tiny_fd.sh 或者 sh train_mb_tiny_RFB_fd.sh
  - [pytorch-ssd](https://github.com/qfgaohao/pytorch-ssd)
  - [libfacedetection](https://github.com/ShiqiYu/libfacedetection/)
  - [RFBNet](https://github.com/ruinmessi/RFBNet)
+ - [RFSong-779](https://github.com/songwsx/RFSong-779)
  - [Retinaface](https://github.com/deepinsight/insightface/blob/master/RetinaFace/README.md)
+
  
 ##  如果有帮助，欢迎star!
