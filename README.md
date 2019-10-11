@@ -25,7 +25,7 @@
 libfacedetection v2|0.4 |0.04       |0.02
 官方 Retinaface-Mobilenet-0.25 (Mxnet)   |0.745|0.553|0.232
 version-slim|0.765     |0.662       |0.385
-version-RFB|0.784     |0.688       |0.418
+version-RFB|**0.784**     |**0.688**       |**0.418**
 
 
 - 在WIDER FACE test集测试精度（单尺度输入分辨率：**VGA 640*480**） 
@@ -34,9 +34,9 @@ version-RFB|0.784     |0.688       |0.418
 ------|--------|----------|--------
 libfacedetection v1|0.197    |0.199       |0.112
 libfacedetection v2|0.2 |0.218       |0.147
-官方 Retinaface-Mobilenet-0.25 (Mxnet)   |0.879|0.807|0.481
+官方 Retinaface-Mobilenet-0.25 (Mxnet)   |**0.879**|0.807|0.481
 version-slim|0.769     |0.733       |0.486
-version-RFB|0.851     |0.81       |0.541
+version-RFB|0.851     |**0.81**       |**0.541**
 
 ### 终端设备推理速度
 
@@ -44,9 +44,9 @@ version-RFB|0.851     |0.81       |0.541
 
 模型|1核|2核|3核|4核
 ------|--------|----------|--------|--------
-libfacedetection v1|28    |16|12|9.7
+libfacedetection v1|**28**    |**16**|**12**|9.7
 官方 Retinaface-Mobilenet-0.25 (Mxnet)   |46|25|18.5|15
-version-slim|29     |16       |12|9.5
+version-slim|29     |**16**       |**12**|**9.5**
 version-RFB|TODO     |TODO       |TODO|TODO
 
 ### 场景测试
@@ -56,7 +56,7 @@ version-RFB|TODO     |TODO       |TODO|TODO
 ------|--------|----------|--------|--------|--------
 libfacedetection v1| 6599   |4571|1899|7490|2818
 官方 Retinaface-Mobilenet-0.25 (Mxnet) |4415|4897|2026|7882|2557
-version-RFB|10339 |10444 |4017|13363|3403
+version-RFB|**10339** |**10444** |**4017**|**13363**|**3403**
 
 ## 生成VOC格式训练数据集以及训练流程
 
