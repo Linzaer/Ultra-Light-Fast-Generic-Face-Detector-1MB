@@ -1,7 +1,7 @@
 # Ultra-Light-Fast-Generic-Face-Detector-1MB 
 # 超轻量级通用人脸检测模型
 ![img1](https://github.com/Linzaer/Ultra-Light-Fast-Generic-Face-Detector-1MB/blob/master/readme_imgs/5.jpg)
-该模型设计是针对**边缘计算设备**或**低算力设备**(如用ARM推理)设计的一款实时超轻量级通用人脸检测模型，旨在能在低算力设备中用ARM进行实时的通用场景的人脸检测推理，当然常规的PC环境（x86 cpu & GPU 同样适用）。有如下几个特点：
+该模型设计是针对**边缘计算设备**或**低算力设备**(如用ARM推理)设计的一款实时超轻量级通用人脸检测模型，旨在能在低算力设备中如用ARM进行实时的通用场景的人脸检测推理，当然常规的PC环境（x86 cpu & GPU 同样适用）。有如下几个特点：
 
  - 在模型大小方面，默认FP32精度下（.pth）文件大小为 **1.1MB**，推理框架int8量化后大小为 **300KB** 左右。
  - 在模型计算量方面，320x240的输入分辨率下仅 **90~109 MFlops**左右，足够轻量。
