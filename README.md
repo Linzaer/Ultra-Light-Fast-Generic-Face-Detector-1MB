@@ -108,7 +108,7 @@ version-RFB| **1.11**
 sh train_mb_tiny_fd.sh 或者 sh train_mb_tiny_RFB_fd.sh
 ```
 
-## 检测图片效果
+## 检测图片效果（输入分辨率：640x480）
 ![img1](https://github.com/Linzaer/Ultra-Light-Fast-Generic-Face-Detector-1MB/blob/master/readme_imgs/1.jpg)
 ![img1](https://github.com/Linzaer/Ultra-Light-Fast-Generic-Face-Detector-1MB/blob/master/readme_imgs/2.jpg)
 ![img1](https://github.com/Linzaer/Ultra-Light-Fast-Generic-Face-Detector-1MB/blob/master/readme_imgs/4.jpg)
