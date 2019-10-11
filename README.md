@@ -48,7 +48,7 @@ version-RFB|0.851     |**0.81**       |**0.541**
 libfacedetection v1|**28**    |**16**|**12**|9.7
 官方 Retinaface-Mobilenet-0.25 (Mxnet)   |46|25|18.5|15
 version-slim|29     |**16**       |**12**|**9.5**
-version-RFB|TODO     |TODO       |TODO|TODO
+version-RFB|35     |19.6       |14.8| 11
 
 ### 场景测试
 - 若干不同场景视频大致有效人脸检出数量测试（单位：个）（分辨率：**VGA 640*480**，阈值0.6） ：
