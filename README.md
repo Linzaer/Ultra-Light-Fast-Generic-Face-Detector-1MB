@@ -18,7 +18,7 @@
 ## 精度、速度、场景测试
 训练集是使用[Retinaface](https://github.com/deepinsight/insightface/blob/master/RetinaFace/README.md )提供的清理过的wideface标签配合widerface数据集生成VOC训练集（PS:以下测试结果均为本人测试，结果可能有部分出入）。
 ### Widerface测试
- - 在WIDER FACE test集测试精度（单尺度输入分辨率：**VGA 320*240**） 
+ - 在WIDER FACE test集测试精度（单尺度输入分辨率：**320*240**） 
 
 模型|Easy Set|Medium Set|Hard Set
 ------|--------|----------|--------
@@ -40,7 +40,7 @@ version-RFB|0.851     |0.81       |0.541
 
 ### 终端设备推理速度
 
-- 树莓派4B MNN推理测试耗时 **(ms)**（ARM/A72x4/1.5GHz/输入分辨率 : **320x240** /int8量化） 
+- 树莓派4B MNN推理测试耗时 **(单位：ms)**（ARM/A72x4/1.5GHz/输入分辨率 : **320x240** /int8量化） 
 
 模型|1核|2核|3核|4核
 ------|--------|----------|--------|--------
@@ -50,8 +50,13 @@ version-slim|29     |16       |12|9.5
 version-RFB|TODO     |TODO       |TODO|TODO
 
 ### 场景测试
-- 若干不同场景视频大致有效人脸检出数量测试：
-![img1](https://github.com/Linzaer/Ultra-Light-Fast-Generic-Face-Detector-1MB/blob/master/readme_imgs/scene_test.png)
+- 若干不同场景视频大致有效人脸检出数量测试（单位：个）（分辨率：**VGA 640*480**，阈值0.6） ：
+
+模型|地铁站室外.MP4(1分43秒)|地铁站室外.MP4(1分43秒)|地铁站室外.MP4(1分43秒)|地铁站室外.MP4(1分43秒)|地铁站室外.MP4(1分43秒)
+------|--------|----------|--------|--------|--------
+libfacedetection v1| 6599   |4571|1899|7490|2818
+官方 Retinaface-Mobilenet-0.25 (Mxnet) |4415|4897|2026|7882|2557
+version-RFB|10339 |10444 |4017|13363|3403
 
 ## 生成VOC格式训练数据集以及训练流程
 
