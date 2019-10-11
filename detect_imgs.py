@@ -22,7 +22,7 @@ result_path = "./detect_imgs_results"
 label_path = "./models/voc-model-labels.txt"
 test_device = "cuda:0"
 
-candidate_size = 1000
+candidate_size = 1500
 threshold = 0.6
 
 class_names = [name.strip() for name in open(label_path).readlines()]
@@ -31,8 +31,8 @@ if net_type == 'mb_tiny_fd':
     net = create_mb_tiny_fd(len(class_names), is_test=True, device=test_device)
     predictor = create_mb_tiny_fd_predictor(net, candidate_size=candidate_size, device=test_device)
 elif net_type == 'mb_tiny_RFB_fd':
-    # model_path = "models/pretrained/Mb_Tiny_RFB_FD_train_input_320.pth"
-    model_path = "models/pretrained/Mb_Tiny_RFB_FD_train_input_640.pth"
+    model_path = "models/pretrained/Mb_Tiny_RFB_FD_train_input_320.pth"
+    # model_path = "models/pretrained/Mb_Tiny_RFB_FD_train_input_640.pth"
     net = create_Mb_Tiny_RFB_fd(len(class_names), is_test=True, device=test_device)
     predictor = create_Mb_Tiny_RFB_fd_predictor(net, candidate_size=candidate_size, device=test_device)
 else:
