@@ -70,9 +70,25 @@ version-RFB|**10339** |**10444** |**4017**|**13363**|**3403**
 ```Python
  python3 ./data/wider_face_2_voc_add_landmark.py
 ```
-程序运行和完毕后会在./data目录下生成 **wider_face_add_lm_10_10**文件夹，该文件夹数据和数据包（1）解压后相同。
+程序运行和完毕后会在./data目录下生成 **wider_face_add_lm_10_10**文件夹，该文件夹数据和数据包（1）解压后相同，完整目录结构如下：
+```Shell
+  data/
+    retinaface_labels/
+      test/
+      train/
+      val/
+    wider_face/
+      WIDER_test/
+      WIDER_train/
+      WIDER_val/
+    wider_face_add_lm_10_10/
+      Annotations/
+      ImageSets/
+      JPEGImages/
+    wider_face_2_voc_add_landmark.py
+```
 
-3. 至此VOC训练集准备完毕，项目根目录下分别有**train_mb_tiny_fd.sh**和**train_mb_tiny_RFB_fd.sh**两个脚本，前者用于训练slim版本模型，后者用于训练RFB版本模型，默认参数已设置好，参数如需微调请参考./train.py中关于各训练超参数的说明。
+3. 至此VOC训练集准备完毕，项目根目录下分别有 **train_mb_tiny_fd.sh** 和 **train_mb_tiny_RFB_fd.sh** 两个脚本，前者用于训练**slim版本**模型，后者用于训练**RFB版本**模型，默认参数已设置好，参数如需微调请参考 **./train.py** 中关于各训练超参数的说明。
 
 4. 运行**train_mb_tiny_fd.sh**和**train_mb_tiny_RFB_fd.sh**即可
 ```Shell
