@@ -65,7 +65,7 @@ version-RFB|**10339** |**10444** |**4017**|**13363**|**3403**
 模型|模型文件大小（MB）
 ------|--------
 libfacedetection v1（caffe）| 2.58
-libfacedetection v2 (caffe)| 3.34
+libfacedetection v2（caffe）| 3.34
 官方 Retinaface-Mobilenet-0.25 (Mxnet) | 1.68
 version-slim| **1.04**
 version-RFB| **1.11** 
