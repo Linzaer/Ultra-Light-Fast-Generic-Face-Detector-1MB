@@ -16,7 +16,7 @@
 - Pytorch1.2
 - CUDA10.0 + CUDNN7.6
 
-## 精度、速度、场景测试
+## 精度、速度、场景测试、模型大小比较
 训练集是使用[Retinaface](https://github.com/deepinsight/insightface/blob/master/RetinaFace/README.md )提供的清理过的widerface标签配合widerface数据集生成VOC训练集（PS:以下测试结果均为本人测试，结果可能有部分出入）。
 ### Widerface测试
  - 在WIDER FACE test集测试精度（单尺度输入分辨率：**320*240**） 
