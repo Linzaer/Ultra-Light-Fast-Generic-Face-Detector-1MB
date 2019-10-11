@@ -44,7 +44,7 @@ def predict(width, height, confidences, boxes, prob_threshold, iou_threshold=0.5
 
 label_path = "models/voc-model-labels.txt"
 
-onnx_path = "models/Mb_Tiny_RFB_FD_train_input_320.onnx"
+onnx_path = "models/onnx/Mb_Tiny_RFB_FD_train_input_320.onnx"
 class_names = [name.strip() for name in open(label_path).readlines()]
 
 predictor = onnx.load(onnx_path)
@@ -67,6 +67,7 @@ while True:
         break
     image = cv2.cvtColor(orig_image, cv2.COLOR_BGR2RGB)
     image = cv2.resize(image, (320, 240))
+    # image = cv2.resize(image, (640, 480))
     image_mean = np.array([127, 127, 127])
     image = (image - image_mean) / 128
     image = np.transpose(image, [2, 0, 1])

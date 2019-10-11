@@ -16,8 +16,8 @@ from vision.utils.misc import Timer
 
 label_path = "./models/voc-model-labels.txt"
 
-net_type = "mb_tiny_fd"          # inference faster,lower precision
-# net_type = "mb_tiny_RFB_fd"  # inference lower,higher precision
+# net_type = "mb_tiny_fd"          # inference faster,lower precision
+net_type = "mb_tiny_RFB_fd"  # inference lower,higher precision
 
 cap = cv2.VideoCapture("/home/linzai/Videos/video/16_4.MP4")  # capture from video
 # cap = cv2.VideoCapture(0)  # capture from camera

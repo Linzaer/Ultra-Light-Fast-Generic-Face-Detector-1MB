@@ -35,7 +35,7 @@ net.eval()
 net.to("cuda")
 
 model_name = model_path.split("/")[-1].split(".")[0]
-model_path = f"models/{model_name}.onnx"
+model_path = f"models/onnx/{model_name}.onnx"
 
 dummy_input = torch.randn(1, 3, 240, 320).to("cuda")
 # dummy_input = torch.randn(1, 3, 480, 640).to("cuda") #if input size is 640*480
