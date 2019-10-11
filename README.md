@@ -125,6 +125,8 @@ sh train_mb_tiny_fd.sh 或者 sh train_mb_tiny_RFB_fd.sh
  - [pytorch-ssd](https://github.com/qfgaohao/pytorch-ssd)
  - [libfacedetection](https://github.com/ShiqiYu/libfacedetection/)
  - [RFBNet](https://github.com/ruinmessi/RFBNet)
+ - [RFSong-779](https://github.com/songwsx/RFSong-779)
  - [Retinaface](https://github.com/deepinsight/insightface/blob/master/RetinaFace/README.md)
+
  
 ##  如果有帮助，欢迎star!
