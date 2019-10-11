@@ -59,6 +59,17 @@ libfacedetection v1| 6599   |4571|1899|7490|2818
 官方 Retinaface-Mobilenet-0.25 (Mxnet) |4415|4897|2026|7882|2557
 version-RFB|**10339** |**10444** |**4017**|**13363**|**3403**
 
+### 模型大小比较
+- 若干主流开源轻量级人脸检测模型大小比较 ：
+
+模型|模型文件大小（MB）
+------|--------
+libfacedetection v1（caffe）| 2.58
+libfacedetection v2 (caffe)| 3.34
+官方 Retinaface-Mobilenet-0.25 (Mxnet) | 1.68
+version-slim| **1.04**
+version-RFB| **1.11** 
+
 ## 生成VOC格式训练数据集以及训练流程
 
 1. 下载widerface官网数据集或者下载我提供的训练集解压放入./data文件夹内：
