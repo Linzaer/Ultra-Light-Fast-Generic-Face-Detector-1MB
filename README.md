@@ -11,7 +11,7 @@
 
 
 ## 测试过正常的运行环境
-- Ubuntu16.04、Ubuntu18.04
+- Ubuntu16.04、Ubuntu18.04、Windows 10
 - Python3.6
 - Pytorch1.2
 - CUDA10.0 + CUDNN7.6
