@@ -9,7 +9,7 @@ import cv2
 from vision.ssd.config.fd_config import define_img_size
 
 input_img_size = 640  # define input size ,default optional(128/160/320/480/640/1280)
-define_img_size(input_img_size)
+define_img_size(input_img_size)  # must put define_img_size() before 'import create_mb_tiny_fd, create_mb_tiny_fd_predictor'
 
 from vision.ssd.mb_tiny_fd import create_mb_tiny_fd, create_mb_tiny_fd_predictor
 from vision.ssd.mb_tiny_RFB_fd import create_Mb_Tiny_RFB_fd, create_Mb_Tiny_RFB_fd_predictor

@@ -108,7 +108,7 @@ args = parser.parse_args()
 
 input_img_size = args.input_size  # define input size ,default optional(128/160/320/480/640/1280)
 logging.info("inpu size :{}".format(input_img_size))
-define_img_size(input_img_size)
+define_img_size(input_img_size)  # must put define_img_size() before 'import fd_config'
 
 from vision.ssd.config import fd_config
 from vision.ssd.data_preprocessing import TrainAugmentation, TestTransform
