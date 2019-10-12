@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-model_root_path="./models/train_mb_lite_RFB"
+model_root_path="./models/train_mb_tiny_RFB_fd"
 log_dir="$model_root_path/logs"
 log="$log_dir/log"
 mkdir -p "$log_dir"
