@@ -37,7 +37,7 @@ version-RFB|**0.784**     |**0.688**       |**0.418**
 libfacedetection v1（caffe）|0.741 |0.683       |0.421
 libfacedetection v2（caffe）|0.773 |0.718       |0.485
 官方 Retinaface-Mobilenet-0.25 (Mxnet)   |**0.879**|0.807|0.481
-version-slim|0.769     |0.733       |0.486
+version-slim|0.757     |0.721       |0.511
 version-RFB|0.851     |**0.81**       |**0.541**
 
 ### 终端设备推理速度
