@@ -11,7 +11,7 @@
 
 
 ## 测试过正常的运行环境
-- Ubuntu16.04、Ubuntu18.04
+- Ubuntu16.04、Ubuntu18.04、Windows 10
 - Python3.6
 - Pytorch1.2
 - CUDA10.0 + CUDNN7.6
@@ -23,7 +23,8 @@
 
 模型|Easy Set|Medium Set|Hard Set
 ------|--------|----------|--------
-libfacedetection v2|0.4 |0.04       |0.02
+libfacedetection v1（caffe）|0.65 |0.5       |0.233
+libfacedetection v2（caffe）|0.714 |0.585       |0.306
 官方 Retinaface-Mobilenet-0.25 (Mxnet)   |0.745|0.553|0.232
 version-slim|0.765     |0.662       |0.385
 version-RFB|**0.784**     |**0.688**       |**0.418**
@@ -33,10 +34,10 @@ version-RFB|**0.784**     |**0.688**       |**0.418**
 
 模型|Easy Set|Medium Set|Hard Set
 ------|--------|----------|--------
-libfacedetection v1|0.197    |0.199       |0.112
-libfacedetection v2|0.2 |0.218       |0.147
+libfacedetection v1（caffe）|0.741 |0.683       |0.421
+libfacedetection v2（caffe）|0.773 |0.718       |0.485
 官方 Retinaface-Mobilenet-0.25 (Mxnet)   |**0.879**|0.807|0.481
-version-slim|0.769     |0.733       |0.486
+version-slim|0.757     |0.721       |0.511
 version-RFB|0.851     |**0.81**       |**0.541**
 
 ### 终端设备推理速度
@@ -57,7 +58,7 @@ version-RFB|35     |19.6       |14.8| 11
 ------|--------|----------|--------|--------|--------
 libfacedetection v1| 6599   |4571|1899|7490|2818
 官方 Retinaface-Mobilenet-0.25 (Mxnet) |4415|4897|2026|7882|2557
-version-RFB|**10339** |**10444** |**4017**|**13363**|**3403**
+version-RFB|**9343** |**8765** |**4017**|**12133**|**3321**
 
 ### 模型大小比较
 - 若干主流开源轻量级人脸检测模型大小比较 ：
