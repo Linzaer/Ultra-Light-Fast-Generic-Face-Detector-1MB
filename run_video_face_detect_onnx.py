@@ -84,12 +84,12 @@ while True:
 
         cv2.rectangle(orig_image, (box[0], box[1]), (box[2], box[3]), (255, 255, 0), 4)
 
-        cv2.putText(orig_image, label,
-                    (box[0] + 20, box[1] + 40),
-                    cv2.FONT_HERSHEY_SIMPLEX,
-                    1,  # font scale
-                    (255, 0, 255),
-                    2)  # line type
+        # cv2.putText(orig_image, label,
+        #             (box[0] + 20, box[1] + 40),
+        #             cv2.FONT_HERSHEY_SIMPLEX,
+        #             1,  # font scale
+        #             (255, 0, 255),
+        #             2)  # line type
     sum += boxes.shape[0]
     orig_image = cv2.resize(orig_image, (0, 0), fx=0.7, fy=0.7)
     cv2.imshow('annotated', orig_image)

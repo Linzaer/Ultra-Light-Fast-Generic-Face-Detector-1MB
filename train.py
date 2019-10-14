@@ -29,14 +29,12 @@ parser.add_argument('--balance_data', action='store_true',
                     help="Balance training data by down-sampling more frequent labels.")
 
 parser.add_argument('--net', default="mb_tiny_RFB_fd",
-                    help="The network architecture")
+                    help="The network architecture ,optional(mb_tiny_RFB_fd , mb_tiny_fd)")
 parser.add_argument('--freeze_base_net', action='store_true',
                     help="Freeze base net layers.")
 parser.add_argument('--freeze_net', action='store_true',
                     help="Freeze all the layers except the prediction head.")
 
-parser.add_argument('--mb2_width_mult', default=1.0, type=float,
-                    help='Width Multiplifier for MobilenetV2')
 
 # Params for SGD
 parser.add_argument('--lr', '--learning-rate', default=1e-2, type=float,
@@ -94,13 +92,13 @@ parser.add_argument('--cuda_index', default="0", type=str,
 parser.add_argument('--power', default=2, type=int,
                     help='poly lr pow')
 parser.add_argument('--overlap_threshold', default=0.34999999404, type=float,
-                    help='detecttion_out_overlap_threshold')
+                    help='overlap_threshold')
 parser.add_argument('--iou_threshold', default=0.34999999404, type=float,
                     help='iou_threshold')
 parser.add_argument('--optimizer_type', default="SGD", type=str,
                     help='optimizer_type')
 parser.add_argument('--input_size', default=320, type=int,
-                    help='define network input size,default optional 128/160/320/480/640/1280')
+                    help='define network input size,default optional value 128/160/320/480/640/1280')
 
 logging.basicConfig(stream=sys.stdout, level=logging.INFO,
                     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
