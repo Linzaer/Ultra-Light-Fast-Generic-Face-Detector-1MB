@@ -23,7 +23,6 @@
 
 模型|Easy Set|Medium Set|Hard Set
 ------|--------|----------|--------
-libfacedetection v2|0.4 |0.04       |0.02
 官方 Retinaface-Mobilenet-0.25 (Mxnet)   |0.745|0.553|0.232
 version-slim|0.765     |0.662       |0.385
 version-RFB|**0.784**     |**0.688**       |**0.418**
@@ -33,8 +32,6 @@ version-RFB|**0.784**     |**0.688**       |**0.418**
 
 模型|Easy Set|Medium Set|Hard Set
 ------|--------|----------|--------
-libfacedetection v1|0.197    |0.199       |0.112
-libfacedetection v2|0.2 |0.218       |0.147
 官方 Retinaface-Mobilenet-0.25 (Mxnet)   |**0.879**|0.807|0.481
 version-slim|0.769     |0.733       |0.486
 version-RFB|0.851     |**0.81**       |**0.541**
