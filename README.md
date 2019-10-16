@@ -1,23 +1,23 @@
 # Ultra-Light-Fast-Generic-Face-Detector-1MB 
-# 超轻量级通用人脸检测模型
+# 超轻量级人脸检测模型
 ![img1](https://github.com/Linzaer/Ultra-Light-Fast-Generic-Face-Detector-1MB/blob/master/readme_imgs/27.jpg)
-该模型设计是针对**边缘计算设备**或**低算力设备**(如用ARM推理)设计的一款实时超轻量级通用人脸检测模型，旨在能在低算力设备中如用ARM进行实时的通用场景的人脸检测推理，同样适用于移动端环境（Android & IOS）、PC环境（CPU & GPU )。有如下几个特点：
+该模型设计是针对**边缘计算设备**或**低算力设备**(如用ARM推理)设计的实时超轻量级通用人脸检测模型，可以在低算力设备中如用ARM进行实时的通用场景的人脸检测推理，同样适用于移动端、PC。
 
- - 在模型大小方面，默认FP32精度下（.pth）文件大小为 **1.1MB**，推理框架int8量化后大小为 **300KB** 左右。
- - 在模型计算量方面，320x240的输入分辨率下仅 **90~109 MFlops**左右，足够轻量。
- - 模型设计有两个版本，version-slim(主干精简速度略快)，version-RFB(加入了修改后的RFB模块，精度更高)。
+ - 在模型大小上，默认FP32精度下（.pth）文件大小为 **1.04~1.1MB**，推理框架int8量化后大小为 **300KB** 左右。
+ - 在模型计算量上，320x240的输入分辨率下 **90~109 MFlops**左右。
+ - 模型有两个版本，version-slim(主干精简速度略快)，version-RFB(加入了修改后的RFB模块，精度更高)。
  - 提供了320x240、640x480不同输入分辨率下使用widerface训练的预训练模型，更好的工作于不同的应用场景。
- - 无特殊算子，支持onnx导出，便于移植推理。
+ - 支持onnx导出，便于移植推理。
 
 
 ## 测试过正常的运行环境
-- Ubuntu16.04、Ubuntu18.04、Windows 10
+- Ubuntu16.04、Ubuntu18.04、Windows 10（inference）
 - Python3.6
 - Pytorch1.2
 - CUDA10.0 + CUDNN7.6
 
 ## 精度、速度、模型大小比较
-训练集是使用[Retinaface](https://github.com/deepinsight/insightface/blob/master/RetinaFace/README.md )提供的清理过的widerface标签配合widerface数据集生成VOC训练集（PS:以下测试结果均为本人测试，结果可能有部分出入）。
+训练集是使用[Retinaface](https://github.com/deepinsight/insightface/blob/master/RetinaFace/README.md )提供的清理过的widerface标签配合widerface数据集生成VOC训练集（PS:以下测试结果为本人测试，结果可能有部分出入）。
 ### Widerface测试
  - 在WIDER FACE test集测试精度（单尺度输入分辨率：**320*240**） 
 
@@ -71,7 +71,7 @@ version-RFB| **1.11**
   
   （2）未过滤小人脸的完整widerface数据压缩包 ：[百度云盘 提取码：xeis](https://pan.baidu.com/s/1Qusz-CjIzsILmjv6jtFpXQ )
   
-2. **（PS:如果下载的是过滤后的上述(1)中的数据包，则不需要执行这步）** 由于widerface存在很多极小的不清楚的人脸，不利于高效模型的收敛，所以需要过滤，默认过滤人脸大小10像素*10像素以下的人脸。
+2. **（PS:如果下载的是过滤后的上述(1)中的数据包，则不需要执行这步）** 由于widerface存在很多极小的不清楚的人脸，不太利于高效模型的收敛，所以需要过滤训练，默认过滤人脸大小10像素x10像素以下的人脸。
 运行./data/wider_face_2_voc_add_landmark.py
 ```Python
  python3 ./data/wider_face_2_voc_add_landmark.py
@@ -110,9 +110,9 @@ sh train_mb_tiny_fd.sh 或者 sh train_mb_tiny_RFB_fd.sh
  - 若生产实际场景为中近距离、人脸大、人脸数少，则建议采用输入尺寸input_size：320（320x240）分辨率训练，并采用320x240图片大小输入进行预测推理，如使用提供的预训练模型**Mb_Tiny_RFB_FD_train_input_320.pth**进行推理。
  - 若生产实际场景为中远距离、人脸中小、人脸数多，则建议采用：
  
- （1）最优：输入尺寸input_size：640（640x480）分辨率训练，并采用640x480图片大小或者更大输入尺寸进行预测推理,如使用提供的预训练模型**Mb_Tiny_RFB_FD_train_input_640.pth**进行推理，更高的召回，更低的误报。
+ （1）最优：输入尺寸input_size：640（640x480）分辨率训练，并采用同等或更大输入尺寸进行预测推理,如使用提供的预训练模型**Mb_Tiny_RFB_FD_train_input_640.pth**进行推理，更低的误报。
  
- （2）次优：输入尺寸input_size：320（320x240）分辨率训练，并采用640x480图片大小输入进行预测推理，这样对于小人脸更敏感，但是误报会增加。
+ （2）次优：输入尺寸input_size：320（320x240）分辨率训练，并采用480x360或640x480大小输入进行预测推理，对于小人脸更敏感，误报会增加。
  
  - 各个场景的最佳效果需要调整输入分辨率从而在速度和精度中间取得平衡。
  - 过大的输入分辨率虽然会增强小人脸的召回率，但是也会提高大、近距离人脸的误报率，而且推理速度延迟成倍增加。
@@ -131,6 +131,3 @@ sh train_mb_tiny_fd.sh 或者 sh train_mb_tiny_RFB_fd.sh
  - [RFBNet](https://github.com/ruinmessi/RFBNet)
  - [RFSong-779](https://github.com/songwsx/RFSong-779)
  - [Retinaface](https://github.com/deepinsight/insightface/blob/master/RetinaFace/README.md)
-
- 
-##  如果有帮助，欢迎star!
