@@ -19,7 +19,7 @@
 ## 精度、速度、模型大小比较
 训练集是使用[Retinaface](https://github.com/deepinsight/insightface/blob/master/RetinaFace/README.md )提供的清理过的widerface标签配合widerface数据集生成VOC训练集（PS:以下测试结果为本人测试，结果可能有部分出入）。
 ### Widerface测试
- - 在WIDER FACE test集测试精度（单尺度输入分辨率：**320*240 或最大边长320等比缩放**） 
+ - 在WIDER FACE test集测试精度（单尺度输入分辨率：**320*240 或按最大边长320等比缩放**） 
 
 模型|Easy Set|Medium Set|Hard Set
 ------|--------|----------|--------
@@ -30,7 +30,7 @@ version-slim|0.765     |0.662       |0.385
 version-RFB|**0.784**     |**0.688**       |**0.418**
 
 
-- 在WIDER FACE test集测试精度（单尺度输入分辨率：**VGA 640*480 或最大边长640等比缩放** ） 
+- 在WIDER FACE test集测试精度（单尺度输入分辨率：**VGA 640*480 或按最大边长640等比缩放** ） 
 
 模型|Easy Set|Medium Set|Hard Set
 ------|--------|----------|--------
