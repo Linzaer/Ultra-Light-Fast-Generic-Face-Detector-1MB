@@ -19,26 +19,29 @@
 ## 精度、速度、模型大小比较
 训练集是使用[Retinaface](https://github.com/deepinsight/insightface/blob/master/RetinaFace/README.md )提供的清理过的widerface标签配合widerface数据集生成VOC训练集（PS:以下测试结果为本人测试，结果可能有部分出入）。
 ### Widerface测试
- - 在WIDER FACE test集测试精度（单尺度输入分辨率：**320*240**） 
+ - 在WIDER FACE test集测试精度（单尺度输入分辨率：**320*240 或最大边长320等比缩放**） 
 
 模型|Easy Set|Medium Set|Hard Set
 ------|--------|----------|--------
 libfacedetection v1（caffe）|0.65 |0.5       |0.233
 libfacedetection v2（caffe）|0.714 |0.585       |0.306
-官方 Retinaface-Mobilenet-0.25 (Mxnet)   |0.745|0.553|0.232
+Retinaface-Mobilenet-0.25 (Mxnet)   |0.745|0.553|0.232
 version-slim|0.765     |0.662       |0.385
 version-RFB|**0.784**     |**0.688**       |**0.418**
 
 
-- 在WIDER FACE test集测试精度（单尺度输入分辨率：**VGA 640*480**） 
+- 在WIDER FACE test集测试精度（单尺度输入分辨率：**VGA 640*480 或最大边长640等比缩放** ） 
 
 模型|Easy Set|Medium Set|Hard Set
 ------|--------|----------|--------
 libfacedetection v1（caffe）|0.741 |0.683       |0.421
 libfacedetection v2（caffe）|0.773 |0.718       |0.485
-官方 Retinaface-Mobilenet-0.25 (Mxnet)   |**0.879**|0.807|0.481
+Retinaface-Mobilenet-0.25 (Mxnet)   |**0.879**|0.807|0.481
 version-slim|0.757     |0.721       |0.511
 version-RFB|0.851     |**0.81**       |**0.541**
+
+> - 该部分主要是测试模型在中小分辨率下的测试集效果。
+> - RetinaFace-mnet（Retinaface-Mobilenet-0.25），来自于很棒的工作[insightface](https://github.com/deepinsight/insightface)，测试该网络时是将原图按最大边长320或者640等比缩放，所以人脸不会形变,其余网络采用固定尺寸resize。同时RetinaFace-mnet最优1600单尺度test测试集结果为0.887(Easy)/0.87(Medium)/0.791(Hard)。
 
 ### 终端设备推理速度
 
@@ -53,7 +56,7 @@ version-RFB|35     |19.6       |14.8| 11
 
 
 ### 模型大小比较
-- 若干主流开源轻量级人脸检测模型大小比较 ：
+- 若干开源轻量级人脸检测模型大小比较 ：
 
 模型|模型文件大小（MB）
 ------|--------
