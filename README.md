@@ -1,3 +1,4 @@
+[English Version](https://github.com/Linzaer/Ultra-Light-Fast-Generic-Face-Detector-1MB/blob/master/README_EN.md )
 # Ultra-Light-Fast-Generic-Face-Detector-1MB 
 # 超轻量级人脸检测模型
 ![img1](https://github.com/Linzaer/Ultra-Light-Fast-Generic-Face-Detector-1MB/blob/master/readme_imgs/27.jpg)
