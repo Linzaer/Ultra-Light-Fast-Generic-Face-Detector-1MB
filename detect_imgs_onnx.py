@@ -45,7 +45,7 @@ def predict(width, height, confidences, boxes, prob_threshold, iou_threshold=0.5
 
 label_path = "models/voc-model-labels.txt"
 
-onnx_path = "models/onnx/Mb_Tiny_RFB_FD_train_input_320_test.onnx"
+onnx_path = "models/onnx/Mb_Tiny_RFB_FD_train_input_320.onnx"
 class_names = [name.strip() for name in open(label_path).readlines()]
 
 predictor = onnx.load(onnx_path)
@@ -66,7 +66,7 @@ listdir = os.listdir(path)
 sum = 0
 for file_path in listdir:
     img_path = os.path.join(path, file_path)
-    orig_image = cv2.imread("/home/linzai/PycharmProjects/Ultra-Light(1MB)_&_Fast_Face_Detector/imgs/5.jpg")
+    orig_image = cv2.imread(img_path)
     image = cv2.cvtColor(orig_image, cv2.COLOR_BGR2RGB)
     image = cv2.resize(image, (320, 240))
     # image = cv2.resize(image, (640, 480))
