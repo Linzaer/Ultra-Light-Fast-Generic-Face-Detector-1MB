@@ -400,7 +400,6 @@ class RandomSampleCrop_v2(object):
                 # aspect ratio constraint b/t .5 & 2
                 if h / w != 1:
                     continue
-                print("1")
                 left = random.uniform(width - w)
                 top = random.uniform(height - h)
 

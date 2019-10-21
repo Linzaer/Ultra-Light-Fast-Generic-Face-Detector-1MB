@@ -88,7 +88,7 @@ parser.add_argument('--checkpoint_folder', default='models/',
 parser.add_argument('--log_dir', default='./models/Ultra-Light(1MB)_&_Fast_Face_Detector/logs',
                     help='lod dir')
 parser.add_argument('--cuda_index', default="0", type=str,
-                    help='choose cuda index')
+                    help='Choose cuda index.If you have 4 GPUs, you can set it like 0,1,2,3')
 parser.add_argument('--power', default=2, type=int,
                     help='poly lr pow')
 parser.add_argument('--overlap_threshold', default=0.34999999404, type=float,
