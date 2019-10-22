@@ -69,9 +69,9 @@ version-RFB| **1.11**
 
 1. Download the wideface official website dataset or download the training set I provided and extract it into the ./data folder:
 
-  (1) The clean widerface data pack after filtering out the 10px*10px small face: [Baiyun cloud disk extraction code: x5gt] (https://pan.baidu.com/s/1m600pp-AsNot6XgIiqDlOw)
+  (1) The clean widerface data pack after filtering out the 10px*10px small face: [Baiyun cloud disk ,extraction code: x5gt](https://pan.baidu.com/s/1m600pp-AsNot6XgIiqDlOw)
   
-  (2) Complete widerface data compression package without filtering small faces: [Baiyun cloud disk extraction code: xeis] (https://pan.baidu.com/s/1Qusz-CjIzsILmjv6jtFpXQ)
+  (2) Complete widerface data compression package without filtering small faces: [Baiyun cloud disk ,extraction code: xeis](https://pan.baidu.com/s/1Qusz-CjIzsILmjv6jtFpXQ)
 
 2. **(PS: If you download the filtered packets in (1) above, you don't need to perform this step)** Because the wideface has many small and unclear faces, which is not conducive to the convergence of efficient models, it needs to be filtered for training.By default,faces smaller than 10 pixels by 10 pixels will be filtered.
 run ./data/wider_face_2_voc_add_landmark.py
