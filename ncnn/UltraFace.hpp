@@ -67,7 +67,8 @@ private:
     const std::vector<std::vector<float>> min_boxes = {{10.0f, 16.0f, 24.0f}, {32.0f, 48.0f}, {64.0f, 96.0f}, {128.0f, 192.0f, 256.0f}};
     std::vector<std::vector<float>> featuremap_size;
     std::vector<std::vector<float>> shrinkage_size;
-    
+    std::vector<float > w_h_list;
+
     std::vector<std::vector<float>> priors = {};
     
 };

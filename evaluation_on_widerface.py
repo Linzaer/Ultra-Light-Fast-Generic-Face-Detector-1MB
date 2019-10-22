@@ -4,10 +4,11 @@
 # @Author  : vealocia
 # @FileName: evaluation_on_widerface.py
 
-import sys
-import cv2
-import os
 import math
+import os
+import sys
+
+import cv2
 
 from vision.ssd.config.fd_config import define_img_size
 
@@ -16,7 +17,6 @@ define_img_size(input_img_size)  # must put define_img_size() before 'import cre
 
 from vision.ssd.mb_tiny_fd import create_mb_tiny_fd, create_mb_tiny_fd_predictor
 from vision.ssd.mb_tiny_RFB_fd import create_Mb_Tiny_RFB_fd, create_Mb_Tiny_RFB_fd_predictor
-from vision.utils.misc import Timer
 
 label_path = "./models/voc-model-labels.txt"
 
@@ -30,8 +30,8 @@ test_device = "cpu"
 candidate_size = 500
 threshold = 0.11
 
-val_image_root = "/Users/mui/Desktop/coding/WIDER_val/images/" # path to widerface valuation image root
-val_result_txt_save_root = "./widerface_evaluation/" # result directory
+val_image_root = "/Users/mui/Desktop/coding/WIDER_val/images/"  # path to widerface valuation image root
+val_result_txt_save_root = "./widerface_evaluation/"  # result directory
 
 if net_type == 'mb_tiny_fd':
     model_path = "models/pretrained/Mb_Tiny_FD_train_input_320.pth"

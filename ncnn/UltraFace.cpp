@@ -17,28 +17,67 @@ UltraFace::UltraFace(const std::string& bin_path, const std::string& param_path,
     score_threshold = score_threshold_;
     iou_threshold = iou_threshold_;
     
-    switch(input_size){
-        case 128:{
+    switch (input_size) {
+        case 128: {
             in_w = 128;
             in_h = 96;
             num_anchors = 708;
-            featuremap_size = {{16, 8, 4, 2}, {12, 6, 3, 2}};
-            shrinkage_size = {{8, 16, 32, 64}, {8, 16, 32, 48}};
+            featuremap_size = {{16, 8, 4, 2},{12, 6, 3, 2}};
             break;
         }
-        case 320:{
+        case 160: {
+            in_w = 160;
+            in_h = 120;
+            num_anchors = 1118;
+            featuremap_size = {{20, 10, 5, 3},{15, 8, 4, 2}};
+            break;
+        }
+        case 320: {
             in_w = 320;
             in_h = 240;
             num_anchors = 4420;
-            featuremap_size = {{40, 20, 10, 5}, {30, 15, 8, 4}};
-            shrinkage_size =  {{8, 16, 32, 64}, {8, 16, 30, 60}};
+            w_h_list = {320, 240};
+            featuremap_size = {{40, 20, 10, 5},{30, 15, 8, 4}};
             break;
         }
-        default:{
+        case 480: {
+            in_w = 480;
+            in_h = 360;
+            num_anchors = 9984;
+            w_h_list = {480, 360};
+            featuremap_size = {{60, 30, 15, 8},{45, 23, 12, 6}};
+            break;
+        }
+        case 640: {
+            in_w = 640;
+            in_h = 480;
+            num_anchors = 17640;
+            w_h_list = {640, 480};
+            featuremap_size = {{80, 40, 20, 10},{60, 30, 15, 8}};
+            break;
+        }
+        case 1280: {
+            in_w = 1280;
+            in_h = 960;
+            num_anchors = 70500;
+            w_h_list = {1280, 960};
+            featuremap_size = {{160, 80, 40, 20},{120, 60, 30, 15}};
+            break;
+        }
+        default: {
             printf("unknown input size.");
             exit(-1);
         }
     }
+
+    for (int i = 0; i < 2; ++i) {
+        std::vector<float> shrinkage_item;
+        for (int j = 0; j < featuremap_size[i].size(); ++j) {
+            shrinkage_item.push_back(w_h_list[i] / featuremap_size[i][j]);
+        }
+        shrinkage_size.push_back(shrinkage_item);
+    }
+
     /* generate prior anchors */
     for(int index=0; index<num_featuremap; index++){
         float scale_w = in_w / shrinkage_size[0][index];
