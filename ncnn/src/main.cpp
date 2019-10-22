@@ -10,11 +10,9 @@
 #include <iostream>
 #include <opencv2/opencv.hpp>
 
-int main(int argc, char **argv)
-{
+int main(int argc, char **argv) {
     if (argc <= 3) {
-        fprintf(stderr, "Usage: %s <ncnn bin> <ncnn param> [image files...]\n",
-                argv[0]);
+        fprintf(stderr, "Usage: %s <ncnn bin> <ncnn param> [image files...]\n", argv[0]);
         return 1;
     }
 
@@ -28,8 +26,7 @@ int main(int argc, char **argv)
         std::cout << "Processing " << image_file << std::endl;
 
         cv::Mat frame = cv::imread(image_file);
-        ncnn::Mat inmat = ncnn::Mat::from_pixels(
-            frame.data, ncnn::Mat::PIXEL_BGR2RGB, frame.cols, frame.rows);
+        ncnn::Mat inmat = ncnn::Mat::from_pixels(frame.data, ncnn::Mat::PIXEL_BGR2RGB, frame.cols, frame.rows);
 
         std::vector<FaceInfo> face_info;
         ultraface.detect(inmat, face_info);
@@ -43,7 +40,7 @@ int main(int argc, char **argv)
 
         cv::imshow("UltraFace", frame);
         cv::waitKey();
-        // cv::imwrite("result/result.jpg", frame);
+        cv::imwrite("result.jpg", frame);
     }
     return 0;
 }

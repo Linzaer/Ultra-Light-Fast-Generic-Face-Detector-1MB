@@ -10,6 +10,7 @@
 #define UltraFace_hpp
 
 #pragma once
+
 #include "gpu.h"
 #include "net.h"
 #include <algorithm>
@@ -19,9 +20,7 @@
 
 #define num_featuremap 4
 #define hard_nms 1
-#define blending_nms                                                           \
-    2 /* mix nms was been proposaled in paper blaze face, aims to minimize the \
-         temporal jitter*/
+#define blending_nms 2 /* mix nms was been proposaled in paper blaze face, aims to minimize the temporal jitter*/
 
 typedef struct FaceInfo {
     float x1;
@@ -33,23 +32,22 @@ typedef struct FaceInfo {
     float *landmarks;
 } FaceInfo;
 
-class UltraFace
-{
-  public:
+class UltraFace {
+public:
     UltraFace(const std::string &bin_path, const std::string &param_path,
               int input_size, int num_thread_ = 1, int topk_ = -1,
               float score_threshold_ = 0.7, float iou_threshold_ = 0.4);
+
     ~UltraFace();
 
     int detect(ncnn::Mat &img, std::vector<FaceInfo> &face_list);
 
-  private:
-    void generateBBox(std::vector<FaceInfo> &bbox_collection, ncnn::Mat scores,
-                      ncnn::Mat boxes, float score_threshold, int num_anchors);
-    void nms(std::vector<FaceInfo> &input, std::vector<FaceInfo> &output,
-             int type = blending_nms);
+private:
+    void generateBBox(std::vector<FaceInfo> &bbox_collection, ncnn::Mat scores, ncnn::Mat boxes, float score_threshold, int num_anchors);
 
-  private:
+    void nms(std::vector<FaceInfo> &input, std::vector<FaceInfo> &output, int type = blending_nms);
+
+private:
     ncnn::Net ultraface;
 
     int num_thread;
@@ -73,10 +71,10 @@ class UltraFace
     const float center_variance = 0.1;
     const float size_variance = 0.2;
     const std::vector<std::vector<float>> min_boxes = {
-        {10.0f, 16.0f, 24.0f},
-        {32.0f, 48.0f},
-        {64.0f, 96.0f},
-        {128.0f, 192.0f, 256.0f}};
+            {10.0f,  16.0f,  24.0f},
+            {32.0f,  48.0f},
+            {64.0f,  96.0f},
+            {128.0f, 192.0f, 256.0f}};
     std::vector<std::vector<float>> featuremap_size;
     std::vector<std::vector<float>> shrinkage_size;
     std::vector<float> w_h_list;
