@@ -19,7 +19,7 @@ int main(int argc, char **argv) {
     std::string bin_path = argv[1];
     std::string param_path = argv[2];
     cv::namedWindow("UltraFace");
-    UltraFace ultraface(bin_path, param_path, 320); // config model input
+    UltraFace ultraface(bin_path, param_path, 320, 4, 0.7); // config model input
 
     for (int i = 3; i < argc; i++) {
         std::string image_file = argv[i];

@@ -12,8 +12,8 @@
 #include "mat.h"
 
 UltraFace::UltraFace(const std::string &bin_path, const std::string &param_path,
-                     int input_size, int num_thread_, int topk_,
-                     float score_threshold_, float iou_threshold_) {
+                     int input_size, int num_thread_,
+                     float score_threshold_, float iou_threshold_, int topk_) {
     num_thread = num_thread_;
     topk = topk_;
     score_threshold = score_threshold_;
