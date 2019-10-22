@@ -123,9 +123,11 @@ sh train_mb_tiny_fd.sh or sh train_mb_tiny_RFB_fd.sh
 
 ## TODO LIST
 
-- Add the widerface test code
 - Add some test data
-- Add MNN, NCNN C++ inference code
+
+## Completed list
+ - Widerface test code([vealocia](https://github.com/vealocia))
+ - NCNN C++ inference code([vealocia](https://github.com/vealocia))
  
 ##  Reference
 - [pytorch-ssd](https://github.com/qfgaohao/pytorch-ssd)

@@ -125,9 +125,12 @@ sh train_mb_tiny_fd.sh 或者 sh train_mb_tiny_RFB_fd.sh
 
 ## TODO LIST
 
- - 加入widerface测试代码
- - 完善部分测试数据
- - 添加MNN、NCNN C++推理代码
+ - 完善测试数据
+
+ 
+## Completed list
+ - Widerface测试代码([vealocia](https://github.com/vealocia))
+ - NCNN C++推理代码([vealocia](https://github.com/vealocia))
  
 ##  Reference
  - [pytorch-ssd](https://github.com/qfgaohao/pytorch-ssd)
