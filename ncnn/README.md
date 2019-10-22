@@ -1,4 +1,4 @@
-# C++ implemententation for [Ultra-Light-Fast-Generic-Face-Detector-1MB](https://github.com/Linzaer/Ultra-Light-Fast-Generic-Face-Detector-1MB) with [NCNN](https://github.com/Tencent/ncnn)
+# C++ implemententation of [Ultra-Light-Fast-Generic-Face-Detector-1MB](https://github.com/Linzaer/Ultra-Light-Fast-Generic-Face-Detector-1MB) with [NCNN](https://github.com/Tencent/ncnn)
 
 ## How to convert pretrained model to ncnn
 
@@ -32,7 +32,21 @@ Unsqueeze not supported yet!
 Fortunately, we can use this tool to eliminate them :
 https://github.com/daquexian/onnx-simplifier
 
-* Final, use this code for your face detection.
+## Build
+
+```bash
+git clone --recursive --depth=1 https://github.com/Linzaer/Ultra-Light-Fast-Generic-Face-Detector-1MB
+
+cd Ultra-Light-Fast-Generic-Face-Detector-1MB/ncnn
+
+mkdir build && cd build && cmake ..
+make -j$(nproc)
+```
+
+## Usage
+```bash
+./main ../data/ncnn.bin ../data/ncnn.param ../data/test.jpg
+```
 
 ## TODO List
 
