@@ -77,7 +77,7 @@ private:
             {128.0f, 192.0f, 256.0f}};
     std::vector<std::vector<float>> featuremap_size;
     std::vector<std::vector<float>> shrinkage_size;
-    std::vector<float> w_h_list;
+    std::vector<int> w_h_list;
 
     std::vector<std::vector<float>> priors = {};
 };

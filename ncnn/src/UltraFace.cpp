@@ -40,7 +40,6 @@ UltraFace::UltraFace(const std::string &bin_path, const std::string &param_path,
             in_w = 320;
             in_h = 240;
             num_anchors = 4420;
-            w_h_list = {320, 240};
             featuremap_size = {{40, 20, 10, 5},
                                {30, 15, 8,  4}};
             break;
@@ -49,7 +48,6 @@ UltraFace::UltraFace(const std::string &bin_path, const std::string &param_path,
             in_w = 480;
             in_h = 360;
             num_anchors = 9984;
-            w_h_list = {480, 360};
             featuremap_size = {{60, 30, 15, 8},
                                {45, 23, 12, 6}};
             break;
@@ -58,7 +56,6 @@ UltraFace::UltraFace(const std::string &bin_path, const std::string &param_path,
             in_w = 640;
             in_h = 480;
             num_anchors = 17640;
-            w_h_list = {640, 480};
             featuremap_size = {{80, 40, 20, 10},
                                {60, 30, 15, 8}};
             break;
@@ -67,7 +64,6 @@ UltraFace::UltraFace(const std::string &bin_path, const std::string &param_path,
             in_w = 1280;
             in_h = 960;
             num_anchors = 70500;
-            w_h_list = {1280, 960};
             featuremap_size = {{160, 80, 40, 20},
                                {120, 60, 30, 15}};
             break;
@@ -77,7 +73,7 @@ UltraFace::UltraFace(const std::string &bin_path, const std::string &param_path,
             exit(-1);
         }
     }
-
+    w_h_list = {in_w, in_h};
     for (int i = 0; i < 2; ++i) {
         std::vector<float> shrinkage_item;
         for (int j = 0; j < featuremap_size[i].size(); ++j) {
