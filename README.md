@@ -130,7 +130,7 @@ sh train_mb_tiny_fd.sh 或者 sh train_mb_tiny_RFB_fd.sh
  
 ## Completed list
  - Widerface测试代码 ([vealocia](https://github.com/vealocia))
- - NCNN C++推理代码 ([vealocia](https://github.com/vealocia))
+ - [NCNN C++推理代码](https://github.com/Linzaer/Ultra-Light-Fast-Generic-Face-Detector-1MB/tree/master/ncnn) ([vealocia](https://github.com/vealocia))
  
 ##  Reference
  - [pytorch-ssd](https://github.com/qfgaohao/pytorch-ssd)
