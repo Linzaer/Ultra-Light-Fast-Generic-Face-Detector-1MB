@@ -25,8 +25,8 @@ Model|Easy Set|Medium Set|Hard Set
 libfacedetection v1（caffe）|0.65 |0.5       |0.233
 libfacedetection v2（caffe）|0.714 |0.585       |0.306
 Retinaface-Mobilenet-0.25 (Mxnet)   |0.745|0.553|0.232
-version-slim|0.765     |0.662       |0.385
-version-RFB|**0.784**     |**0.688**       |**0.418**
+version-slim|0.77     |0.671       |0.395
+version-RFB|**0.787**     |**0.698**       |**0.438**
 
 
 - Test accuracy in the WIDER FACE val set (single-scale input resolution: **VGA 640*480 or scaling by the maximum side length of 640** )
@@ -36,8 +36,8 @@ Model|Easy Set|Medium Set|Hard Set
 libfacedetection v1（caffe）|0.741 |0.683       |0.421
 libfacedetection v2（caffe）|0.773 |0.718       |0.485
 Retinaface-Mobilenet-0.25 (Mxnet)   |**0.879**|0.807|0.481
-version-slim|0.757     |0.721       |0.511
-version-RFB|0.851     |**0.81**       |**0.541**
+version-slim|0.762     |0.733       |0.547
+version-RFB|0.855     |**0.822**       |**0.579**
 
 > - This part mainly tests the effect of the test set under the medium and small resolutions.
 > - RetinaFace-mnet (Retinaface-Mobilenet-0.25), from a great job [insightface](https://github.com/deepinsight/insightface), when testing this network, the original image is scaled by 320 or 640 as the maximum side length, so the face will not be deformed, and the rest of the network will have a fixed size resize. At the same time, the result of the RetinaFace-mnet optimal 1600 single-scale val set was 0.887 (Easy) / 0.87 (Medium) / 0.791 (Hard).

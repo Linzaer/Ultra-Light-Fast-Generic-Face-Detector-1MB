@@ -27,8 +27,8 @@
 libfacedetection v1（caffe）|0.65 |0.5       |0.233
 libfacedetection v2（caffe）|0.714 |0.585       |0.306
 Retinaface-Mobilenet-0.25 (Mxnet)   |0.745|0.553|0.232
-version-slim|0.765     |0.662       |0.385
-version-RFB|**0.784**     |**0.688**       |**0.418**
+version-slim|0.77     |0.671       |0.395
+version-RFB|**0.787**     |**0.698**       |**0.438**
 
 
 - 在WIDER FACE val集测试精度（单尺度输入分辨率：**VGA 640*480 或按最大边长640等比缩放** ） 
@@ -38,8 +38,8 @@ version-RFB|**0.784**     |**0.688**       |**0.418**
 libfacedetection v1（caffe）|0.741 |0.683       |0.421
 libfacedetection v2（caffe）|0.773 |0.718       |0.485
 Retinaface-Mobilenet-0.25 (Mxnet)   |**0.879**|0.807|0.481
-version-slim|0.757     |0.721       |0.511
-version-RFB|0.851     |**0.81**       |**0.541**
+version-slim|0.762     |0.733       |0.547
+version-RFB|0.855     |**0.822**       |**0.579**
 
 > - 该部分主要是测试模型在中小分辨率下的测试集效果。
 > - RetinaFace-mnet（Retinaface-Mobilenet-0.25），来自于很棒的工作[insightface](https://github.com/deepinsight/insightface)，测试该网络时是将原图按最大边长320或者640等比缩放，所以人脸不会形变,其余网络采用固定尺寸resize。同时RetinaFace-mnet最优1600单尺度val测试集结果为0.887(Easy)/0.87(Medium)/0.791(Hard)。
@@ -122,6 +122,7 @@ sh train_mb_tiny_fd.sh 或者 sh train_mb_tiny_RFB_fd.sh
  - 过大的输入分辨率虽然会增强小人脸的召回率，但是也会提高大、近距离人脸的误报率，而且推理速度延迟成倍增加。
  - 过小的输入分辨率虽然会明显加快推理速度，但是会大幅降低小人脸的召回率。
  - 生产场景的输入分辨率尽量与模型训练时的输入分辨率保持一致，上下浮动不宜过大。
+ 
 
 ## TODO LIST
 
@@ -129,7 +130,7 @@ sh train_mb_tiny_fd.sh 或者 sh train_mb_tiny_RFB_fd.sh
 
  
 ## Completed list
- - Widerface测试代码 ([vealocia](https://github.com/vealocia))
+ - [Widerface测试代码](https://github.com/Linzaer/Ultra-Light-Fast-Generic-Face-Detector-1MB/tree/master/widerface_evaluate)
  - [NCNN C++推理代码](https://github.com/Linzaer/Ultra-Light-Fast-Generic-Face-Detector-1MB/tree/master/ncnn) ([vealocia](https://github.com/vealocia))
  
 ##  Reference

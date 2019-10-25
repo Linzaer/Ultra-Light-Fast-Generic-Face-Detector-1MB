@@ -7,3 +7,8 @@ __pycache__/
 
 detect_imgs_results
 detect_imgs_results_onnx
+widerface_evaluation
+
+widerface_evaluate/build
+widerface_evaluate/*.so
+widerface_evaluate/*.c
