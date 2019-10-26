@@ -38,7 +38,7 @@ version-RFB|**0.787**     |**0.698**       |**0.438**
 libfacedetection v1（caffe）|0.741 |0.683       |0.421
 libfacedetection v2（caffe）|0.773 |0.718       |0.485
 Retinaface-Mobilenet-0.25 (Mxnet)   |**0.879**|0.807|0.481
-version-slim|0.762     |0.733       |0.547
+version-slim|0.853     |0.819       |0.539
 version-RFB|0.855     |**0.822**       |**0.579**
 
 > - 该部分主要是测试模型在中小分辨率下的测试集效果。
