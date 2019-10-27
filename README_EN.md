@@ -109,7 +109,7 @@ sh train_mb_tiny_fd.sh or sh train_mb_tiny_RFB_fd.sh
 ![img1](https://github.com/Linzaer/Ultra-Light-Fast-Generic-Face-Detector-1MB/blob/master/readme_imgs/4.jpg)
 ## PS
 
-- If the actual production scene is medium-distance, large face, and small number of faces, it is recommended to use input size input_size: 320 (320x240) resolution for training, and use 320x240 ,160x120 or 128x96 image size input for inference, such as using the provided pre-training The model **Mb_Tiny_RFB_FD_train_input_320.pth** .
+- If the actual production scene is medium-distance, large face, and small number of faces, it is recommended to use input size input_size: 320 (320x240) resolution for training, and use 320x240 ,160x120 or 128x96 image size input for inference, such as using the provided pre-training  model **Mb_Tiny_FD_train_input_320.pth** or **Mb_Tiny_RFB_FD_train_input_320.pth** .
 - If the actual production scene is medium or long distance,  medium or small face and large face number, it is recommended to adopt:
 
  (1) Optimal: input size input_size: 640 (640x480) resolution training, and use the same or larger input size for inference, such as using the provided pre-training model **Mb_Tiny_RFB_FD_train_input_640.pth** for inference, lower False positives.
