@@ -126,7 +126,7 @@ sh train_mb_tiny_fd.sh or sh train_mb_tiny_RFB_fd.sh
 - Add some test data
 
 ## Completed list
- - Widerface test code ([vealocia](https://github.com/vealocia))
+ - [Widerface test code](https://github.com/Linzaer/Ultra-Light-Fast-Generic-Face-Detector-1MB/tree/master/widerface_evaluate)
  - [NCNN C++ inference code](https://github.com/Linzaer/Ultra-Light-Fast-Generic-Face-Detector-1MB/tree/master/ncnn) ([vealocia](https://github.com/vealocia))
  
 ##  Reference
