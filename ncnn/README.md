@@ -58,7 +58,7 @@ make -j$(nproc)
 ```
 
 ## PS
-* If you want to run faster, try using the slim version or using lower-resolution inputs like 160x120 or 128x96.
+* If you want to run faster, try using the version-slim model or using lower-resolution inputs like 160x120 or 128x96.
 
 
 ## TODO List
