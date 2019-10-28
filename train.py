@@ -28,13 +28,12 @@ parser.add_argument('--validation_dataset', help='Dataset directory path')
 parser.add_argument('--balance_data', action='store_true',
                     help="Balance training data by down-sampling more frequent labels.")
 
-parser.add_argument('--net', default="mb_tiny_RFB_fd",
-                    help="The network architecture ,optional(mb_tiny_RFB_fd , mb_tiny_fd)")
+parser.add_argument('--net', default="RFB",
+                    help="The network architecture ,optional(RFB , slim)")
 parser.add_argument('--freeze_base_net', action='store_true',
                     help="Freeze base net layers.")
 parser.add_argument('--freeze_net', action='store_true',
                     help="Freeze all the layers except the prediction head.")
-
 
 # Params for SGD
 parser.add_argument('--lr', '--learning-rate', default=1e-2, type=float,
@@ -198,10 +197,10 @@ if __name__ == '__main__':
     timer = Timer()
 
     logging.info(args)
-    if args.net == 'mb_tiny_fd':
+    if args.net == 'slim':
         create_net = create_mb_tiny_fd
         config = fd_config
-    elif args.net == 'mb_tiny_RFB_fd':
+    elif args.net == 'RFB':
         create_net = create_Mb_Tiny_RFB_fd
         config = fd_config
     else:

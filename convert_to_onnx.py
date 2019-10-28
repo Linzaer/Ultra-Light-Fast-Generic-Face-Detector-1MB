@@ -12,19 +12,20 @@ define_img_size(input_img_size)
 from vision.ssd.mb_tiny_RFB_fd import create_Mb_Tiny_RFB_fd
 from vision.ssd.mb_tiny_fd import create_mb_tiny_fd
 
-# net_type = "mb_tiny_fd"          # inference faster,lower precision
-net_type = "mb_tiny_RFB_fd"  # inference lower,higher precision
+# net_type = "slim"  # inference faster,lower precision
+net_type = "RFB"  # inference lower,higher precision
 
 label_path = "models/voc-model-labels.txt"
 class_names = [name.strip() for name in open(label_path).readlines()]
 num_classes = len(class_names)
 
-if net_type == 'mb_tiny_fd':
-    model_path = "models/pretrained/Mb_Tiny_FD_train_input_320.pth"
+if net_type == 'slim':
+    model_path = "models/pretrained/version-slim-320.pth"
+    # model_path = "models/pretrained/version-slim-640.pth"
     net = create_mb_tiny_fd(len(class_names), is_test=True)
-elif net_type == 'mb_tiny_RFB_fd':
-    model_path = "models/pretrained/Mb_Tiny_RFB_FD_train_input_320.pth"
-    # model_path = "models/pretrained/Mb_Tiny_RFB_FD_train_input_640.pth"
+elif net_type == 'RFB':
+    model_path = "models/pretrained/version-RFB-320.pth"
+    # model_path = "models/pretrained/version-RFB-640.pth"
     net = create_Mb_Tiny_RFB_fd(len(class_names), is_test=True)
 
 else:

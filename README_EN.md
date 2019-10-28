@@ -96,9 +96,9 @@ After the program is run and finished, the **wider_face_add_lm_10_10** folder wi
     wider_face_2_voc_add_landmark.py
 ```
 
-3. At this point, the VOC training set is ready. There are two scripts: **train_mb_tiny_fd.sh** and **train_mb_tiny_RFB_fd.sh** in the root directory of the project. The former is used to train the **slim version** model, and the latter is used. Training **RFB version** model, the default parameters have been set, if the parameters need to be changed, please refer to the description of each training parameter in **./train.py**.
+3. At this point, the VOC training set is ready. There are two scripts: **train-version-slim.sh** and **train-version-RFB.sh** in the root directory of the project. The former is used to train the **slim version** model, and the latter is used. Training **RFB version** model, the default parameters have been set, if the parameters need to be changed, please refer to the description of each training parameter in **./train.py**.
 
-4. Run **train_mb_tiny_fd.sh** and **train_mb_tiny_RFB_fd.sh**
+4. Run **train-version-slim.sh** and **train-version-RFB.sh**
 ```Shell
 sh train_mb_tiny_fd.sh or sh train_mb_tiny_RFB_fd.sh
 ```
@@ -109,10 +109,10 @@ sh train_mb_tiny_fd.sh or sh train_mb_tiny_RFB_fd.sh
 ![img1](https://github.com/Linzaer/Ultra-Light-Fast-Generic-Face-Detector-1MB/blob/master/readme_imgs/4.jpg)
 ## PS
 
-- If the actual production scene is medium-distance, large face, and small number of faces, it is recommended to use input size input_size: 320 (320x240) resolution for training, and use 320x240 ,160x120 or 128x96 image size input for inference, such as using the provided pre-training  model **Mb_Tiny_FD_train_input_320.pth** or **Mb_Tiny_RFB_FD_train_input_320.pth** .
+- If the actual production scene is medium-distance, large face, and small number of faces, it is recommended to use input size input_size: 320 (320x240) resolution for training, and use 320x240 ,160x120 or 128x96 image size input for inference, such as using the provided pre-training  model **version-slim-320.pth** or **version-RFB-320.pth** .
 - If the actual production scene is medium or long distance,  medium or small face and large face number, it is recommended to adopt:
 
- (1) Optimal: input size input_size: 640 (640x480) resolution training, and use the same or larger input size for inference, such as using the provided pre-training model **Mb_Tiny_RFB_FD_train_input_640.pth** for inference, lower False positives.
+ (1) Optimal: input size input_size: 640 (640x480) resolution training, and use the same or larger input size for inference, such as using the provided pre-training model **version-slim-640.pth** or **version-RFB-640.pth** for inference, lower False positives.
  
  (2) Sub-optimal: input size input_size: 320 (320x240) resolution training, and use 480x360 or 640x480 size input for predictive reasoning, more sensitive to small faces, false positives will increase.
  

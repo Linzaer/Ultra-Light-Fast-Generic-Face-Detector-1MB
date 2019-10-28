@@ -45,7 +45,7 @@ def predict(width, height, confidences, boxes, prob_threshold, iou_threshold=0.5
 
 label_path = "models/voc-model-labels.txt"
 
-onnx_path = "models/onnx/Mb_Tiny_RFB_FD_train_input_320.onnx"
+onnx_path = "models/onnx/version-RFB-320.onnx"
 class_names = [name.strip() for name in open(label_path).readlines()]
 
 predictor = onnx.load(onnx_path)

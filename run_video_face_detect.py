@@ -10,8 +10,8 @@ from vision.ssd.config.fd_config import define_img_size
 parser = argparse.ArgumentParser(
     description='detect_video')
 
-parser.add_argument('--net_type', default="mb_tiny_RFB_fd", type=str,
-                    help='The network architecture ,optional:1. mb_tiny_RFB_fd (higher precision) or 2.mb_tiny_fd (faster)')
+parser.add_argument('--net_type', default="RFB", type=str,
+                    help='The network architecture ,optional: RFB (higher precision) or slim (faster)')
 parser.add_argument('--input_size', default=480, type=int,
                     help='define network input size,default optional value 128/160/320/480/640/1280')
 parser.add_argument('--threshold', default=0.7, type=float,
@@ -47,13 +47,14 @@ test_device = args.test_device
 candidate_size = args.candidate_size
 threshold = args.threshold
 
-if net_type == 'mb_tiny_fd':
-    model_path = "models/pretrained/Mb_Tiny_FD_train_input_320.pth"
+if net_type == 'slim':
+    model_path = "models/pretrained/version-slim-320.pth"
+    # model_path = "models/pretrained/version-slim-640.pth"
     net = create_mb_tiny_fd(len(class_names), is_test=True, device=test_device)
     predictor = create_mb_tiny_fd_predictor(net, candidate_size=candidate_size, device=test_device)
-elif net_type == 'mb_tiny_RFB_fd':
-    model_path = "models/pretrained/Mb_Tiny_RFB_FD_train_input_320.pth"
-    # model_path = "models/pretrained/Mb_Tiny_RFB_FD_train_input_640.pth"
+elif net_type == 'RFB':
+    model_path = "models/pretrained/version-RFB-320.pth"
+    # model_path = "models/pretrained/version-RFB-640.pth"
     net = create_Mb_Tiny_RFB_fd(len(class_names), is_test=True, device=test_device)
     predictor = create_Mb_Tiny_RFB_fd_predictor(net, candidate_size=candidate_size, device=test_device)
 else:

@@ -1,1 +1,6 @@
 A place to store your models.
+
+version-RFB-320.pth : train with img input size 320x240
+version-RFB-640.pth : train with img input size 640x480
+version-slim-320.pth : train with img input size 320x240
+version-slim-640.pth : train with img input size 640x480

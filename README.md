@@ -98,11 +98,11 @@ version-RFB| **1.11**
     wider_face_2_voc_add_landmark.py
 ```
 
-3. 至此VOC训练集准备完毕，项目根目录下分别有 **train_mb_tiny_fd.sh** 和 **train_mb_tiny_RFB_fd.sh** 两个脚本，前者用于训练**slim版本**模型，后者用于训练**RFB版本**模型，默认参数已设置好，参数如需微调请参考 **./train.py** 中关于各训练超参数的说明。
+3. 至此VOC训练集准备完毕，项目根目录下分别有 **train-version-slim.sh** 和 **train-version-RFB.sh** 两个脚本，前者用于训练**slim版本**模型，后者用于训练**RFB版本**模型，默认参数已设置好，参数如需微调请参考 **./train.py** 中关于各训练超参数的说明。
 
-4. 运行**train_mb_tiny_fd.sh**和**train_mb_tiny_RFB_fd.sh**即可
+4. 运行**train-version-slim.sh**和**train-version-RFB.sh**即可
 ```Shell
-sh train_mb_tiny_fd.sh 或者 sh train_mb_tiny_RFB_fd.sh
+sh train-version-slim.sh 或者 sh train-version-RFB.sh
 ```
 
 ## 检测图片效果（输入分辨率：640x480）
@@ -111,10 +111,10 @@ sh train_mb_tiny_fd.sh 或者 sh train_mb_tiny_RFB_fd.sh
 ![img1](https://github.com/Linzaer/Ultra-Light-Fast-Generic-Face-Detector-1MB/blob/master/readme_imgs/4.jpg)
 ## PS
 
- - 若生产实际场景为中近距离、人脸大、人脸数少，则建议采用输入尺寸input_size：320（320x240）分辨率训练，并采用320x240/160x120/128x96图片大小输入进行预测推理，如使用提供的预训练模型**Mb_Tiny_FD_train_input_320.pth**或者**Mb_Tiny_RFB_FD_train_input_320.pth**进行推理。
+ - 若生产实际场景为中近距离、人脸大、人脸数少，则建议采用输入尺寸input_size：320（320x240）分辨率训练，并采用320x240/160x120/128x96图片大小输入进行预测推理，如使用提供的预训练模型**version-slim-320.pth**或者**version-RFB-320.pth**进行推理。
  - 若生产实际场景为中远距离、人脸中小、人脸数多，则建议采用：
  
- （1）最优：输入尺寸input_size：640（640x480）分辨率训练，并采用同等或更大输入尺寸进行预测推理,如使用提供的预训练模型**Mb_Tiny_RFB_FD_train_input_640.pth**进行推理，更低的误报。
+ （1）最优：输入尺寸input_size：640（640x480）分辨率训练，并采用同等或更大输入尺寸进行预测推理,如使用提供的预训练模型**version-slim-640.pth**或者**version-RFB-640.pth**进行推理，更低的误报。
  
  （2）次优：输入尺寸input_size：320（320x240）分辨率训练，并采用480x360或640x480大小输入进行预测推理，对于小人脸更敏感，误报会增加。
  

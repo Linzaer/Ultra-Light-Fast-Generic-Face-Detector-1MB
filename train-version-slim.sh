@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-model_root_path="./models/train_mb_tiny_RFB_fd"
+model_root_path="./models/train-version-slim"
 log_dir="$model_root_path/logs"
 log="$log_dir/log"
 mkdir -p "$log_dir"
@@ -10,7 +10,7 @@ python3 -u train.py \
   --validation_dataset \
   ./data/wider_face_add_lm_10_10 \
   --net \
-  mb_tiny_RFB_fd \
+  slim \
   --num_epochs \
   200 \
   --milestones \

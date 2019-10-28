@@ -12,11 +12,11 @@ from vision.ssd.config.fd_config import define_img_size
 parser = argparse.ArgumentParser(
     description='detect_imgs')
 
-parser.add_argument('--net_type', default="mb_tiny_RFB_fd", type=str,
-                    help='The network architecture ,optional:1. mb_tiny_RFB_fd (higher precision) or 2.mb_tiny_fd (faster)')
+parser.add_argument('--net_type', default="RFB", type=str,
+                    help='The network architecture ,optional: RFB (higher precision) or slim (faster)')
 parser.add_argument('--input_size', default=640, type=int,
                     help='define network input size,default optional value 128/160/320/480/640/1280')
-parser.add_argument('--threshold', default=0.7, type=float,
+parser.add_argument('--threshold', default=0.6, type=float,
                     help='score threshold')
 parser.add_argument('--candidate_size', default=1500, type=int,
                     help='nms candidate size')
@@ -30,19 +30,19 @@ define_img_size(args.input_size)  # must put define_img_size() before 'import cr
 from vision.ssd.mb_tiny_fd import create_mb_tiny_fd, create_mb_tiny_fd_predictor
 from vision.ssd.mb_tiny_RFB_fd import create_Mb_Tiny_RFB_fd, create_Mb_Tiny_RFB_fd_predictor
 
-
 result_path = "./detect_imgs_results"
 label_path = "./models/voc-model-labels.txt"
 test_device = args.test_device
 
 class_names = [name.strip() for name in open(label_path).readlines()]
-if args.net_type == 'mb_tiny_fd':
-    model_path = "models/pretrained/Mb_Tiny_FD_train_input_320.pth"
+if args.net_type == 'slim':
+    model_path = "models/pretrained/version-slim-320.pth"
+    # model_path = "models/pretrained/version-slim-640.pth"
     net = create_mb_tiny_fd(len(class_names), is_test=True, device=test_device)
     predictor = create_mb_tiny_fd_predictor(net, candidate_size=args.candidate_size, device=test_device)
-elif args.net_type == 'mb_tiny_RFB_fd':
-    model_path = "models/pretrained/Mb_Tiny_RFB_FD_train_input_320.pth"
-    # model_path = "models/pretrained/Mb_Tiny_RFB_FD_train_input_640.pth"
+elif args.net_type == 'RFB':
+    model_path = "models/pretrained/version-RFB-320.pth"
+    # model_path = "models/pretrained/version-RFB-640.pth"
     net = create_Mb_Tiny_RFB_fd(len(class_names), is_test=True, device=test_device)
     predictor = create_Mb_Tiny_RFB_fd_predictor(net, candidate_size=args.candidate_size, device=test_device)
 else:

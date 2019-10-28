@@ -2,7 +2,7 @@
 
 ## How to convert pretrained model to ncnn
 
-* Code bellow (```vision/ssd/ssd.py```) should be commented out when convert pytorch pretrained model to onnx. Comment it out and use the convert code in official repo to finish this step.
+* Code bellow (```vision/ssd/ssd.py```) should be commented out when convert pytorch pretrained model to onnx. Comment it out and use the **convert_to_onnx.py** in official repo to finish this step.
 
 ```python
 if self.is_test:
@@ -16,8 +16,8 @@ if self.is_test:
 else:
     return confidences, locations
 ```
-
-* The exported onnx model may contains many redundant operators such as Shape, Gather and Unsqueeze that is not supported in ncnn
+Then you can generate the onnx model like **version-RFB-320_ncnn.onnx** in onnx directory. (You need to rename your model when convert.)
+* But the exported onnx model may contains many redundant operators such as Shape, Gather and Unsqueeze that is not supported in ncnn.
 
 ```
 Shape not supported yet!
@@ -32,6 +32,14 @@ Unsqueeze not supported yet!
 Fortunately, we can use this tool to eliminate them :
 https://github.com/daquexian/onnx-simplifier
 
+```
+python3 -m onnxsim  version-RFB-320_ncnn.onnx version-RFB-320_ncnn_slim.onnx 
+
+```
+
+Next, you can convert this onnx model like **version-RFB-320_ncnn_slim.onnx** into an ncnn model. Here is a website for online conversion : https://convertmodel.com/?tdsourcetag=s_pctim_aiomsg
+
+* We provide converted NCNN models of version-slim-320 and version-RFB-320 in ./ncnn/data .
 ## Build
 
 ```bash
@@ -44,9 +52,14 @@ make -j$(nproc)
 ```
 
 ## Usage
+
 ```bash
-./main ../data/ncnn.bin ../data/ncnn.param ../data/test.jpg
+./main ../data/version-RFB/RFB-320.bin ../data/version-RFB/RFB-320.param ../data/test.jpg
 ```
+
+## PS
+* If you want to run faster, try using the slim version or using lower-resolution inputs like 160x120 or 128x96.
+
 
 ## TODO List
 
