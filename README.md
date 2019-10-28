@@ -111,10 +111,10 @@ sh train-version-slim.sh 或者 sh train-version-RFB.sh
 ![img1](https://github.com/Linzaer/Ultra-Light-Fast-Generic-Face-Detector-1MB/blob/master/readme_imgs/4.jpg)
 ## PS
 
- - 若生产实际场景为中近距离、人脸大、人脸数少，则建议采用输入尺寸input_size：320（320x240）分辨率训练，并采用320x240/160x120/128x96图片大小输入进行预测推理，如使用提供的预训练模型**version-slim-320.pth**或者**version-RFB-320.pth**进行推理。
+ - 若生产实际场景为中近距离、人脸大、人脸数少，则建议采用输入尺寸input_size：320（320x240）分辨率训练，并采用 320x240/160x120/128x96 图片大小输入进行预测推理，如使用提供的预训练模型 **version-slim-320.pth** 或者 **version-RFB-320.pth** 进行推理。
  - 若生产实际场景为中远距离、人脸中小、人脸数多，则建议采用：
  
- （1）最优：输入尺寸input_size：640（640x480）分辨率训练，并采用同等或更大输入尺寸进行预测推理,如使用提供的预训练模型**version-slim-640.pth**或者**version-RFB-640.pth**进行推理，更低的误报。
+ （1）最优：输入尺寸input_size：640（640x480）分辨率训练，并采用同等或更大输入尺寸进行预测推理,如使用提供的预训练模型 **version-slim-640.pth** 或者 **version-RFB-640.pth** 进行推理，更低的误报。
  
  （2）次优：输入尺寸input_size：320（320x240）分辨率训练，并采用480x360或640x480大小输入进行预测推理，对于小人脸更敏感，误报会增加。
  

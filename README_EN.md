@@ -100,7 +100,7 @@ After the program is run and finished, the **wider_face_add_lm_10_10** folder wi
 
 4. Run **train-version-slim.sh** and **train-version-RFB.sh**
 ```Shell
-sh train_mb_tiny_fd.sh or sh train_mb_tiny_RFB_fd.sh
+sh train-version-slim.sh or sh train-version-RFB.sh
 ```
 
 ## Detecting image effects (input resolution: 640x480)
