@@ -98,7 +98,7 @@ After the program is run and finished, the **wider_face_add_lm_10_10** folder wi
 
 3. At this point, the VOC training set is ready. There are two scripts: **train-version-slim.sh** and **train-version-RFB.sh** in the root directory of the project. The former is used to train the **slim version** model, and the latter is used. Training **RFB version** model, the default parameters have been set, if the parameters need to be changed, please refer to the description of each training parameter in **./train.py**.
 
-4. Run **train-version-slim.sh** and **train-version-RFB.sh**
+4. Run **train-version-slim.sh**  **train-version-RFB.sh**
 ```Shell
 sh train-version-slim.sh or sh train-version-RFB.sh
 ```
