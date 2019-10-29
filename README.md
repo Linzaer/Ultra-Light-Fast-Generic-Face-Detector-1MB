@@ -100,7 +100,7 @@ version-RFB| **1.11**
 
 3. 至此VOC训练集准备完毕，项目根目录下分别有 **train-version-slim.sh** 和 **train-version-RFB.sh** 两个脚本，前者用于训练**slim版本**模型，后者用于训练**RFB版本**模型，默认参数已设置好，参数如需微调请参考 **./train.py** 中关于各训练超参数的说明。
 
-4. 运行**train-version-slim.sh**和**train-version-RFB.sh**即可
+4. 运行**train-version-slim.sh** 或 **train-version-RFB.sh**即可
 ```Shell
 sh train-version-slim.sh 或者 sh train-version-RFB.sh
 ```
