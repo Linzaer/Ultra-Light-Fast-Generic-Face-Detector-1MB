@@ -16,7 +16,7 @@ if self.is_test:
 else:
     return confidences, locations
 ```
-Then you can generate the onnx model like **version-RFB-320_ncnn.onnx** in onnx directory. (You need to rename your model when convert.)
+Then you can generate the onnx model like **version-RFB-320_without_postprocessing.onnx** in onnx directory. (You need to rename your model when convert.)
 * But the exported onnx model may contains many redundant operators such as Shape, Gather and Unsqueeze that is not supported in ncnn.
 
 ```
@@ -33,7 +33,7 @@ Fortunately, we can use this tool to eliminate them :
 https://github.com/daquexian/onnx-simplifier
 
 ```
-python3 -m onnxsim  version-RFB-320_ncnn.onnx version-RFB-320_ncnn_slim.onnx 
+python3 -m onnxsim  version-RFB-320_without_postprocessing.onnx version-RFB-320_ncnn_slim.onnx 
 
 ```
 
