@@ -2,7 +2,7 @@
 # Ultra-Light-Fast-Generic-Face-Detector-1MB 
 # 轻量级人脸检测模型
 ![img1](https://github.com/Linzaer/Ultra-Light-Fast-Generic-Face-Detector-1MB/blob/master/readme_imgs/27.jpg)
-该模型是针对边缘计算设备基于[libfacedetection](https://github.com/ShiqiYu/libfacedetection/)替换压缩网络设计的轻量人脸检测模型。
+该模型是针对边缘计算设备设计的轻量人脸检测模型。
 
  - 在模型大小上，默认FP32精度下（.pth）文件大小为 **1.04~1.1MB**，推理框架int8量化后大小为 **300KB** 左右。
  - 在模型计算量上，320x240的输入分辨率下 **90~109 MFlops**左右。
