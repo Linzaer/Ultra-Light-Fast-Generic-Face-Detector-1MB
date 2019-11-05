@@ -8,6 +8,7 @@ This model is a lightweight facedetection model designed for edge computing devi
 - There are two versions of the model, version-slim (network backbone simplification,slightly faster) adn version-RFB (with the modified RFB module, higher precision).
 - Widerface training pre-training model with different input resolutions of 320x240 and 640x480 is provided to better work in different application scenarios.
 - Support for onnx export for ease of migration and inference.
+- [Provide NCNN C++ inference code](https://github.com/Linzaer/Ultra-Light-Fast-Generic-Face-Detector-1MB/tree/master/ncnn).
 
 ## Tested the environment that works
 - Ubuntu16.04、Ubuntu18.04、Windows 10（for inference）
