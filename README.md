@@ -8,7 +8,8 @@
  - 在模型计算量上，320x240的输入分辨率下 **90~109 MFlops**左右。
  - 模型有两个版本，version-slim(主干精简速度略快)，version-RFB(加入了修改后的RFB模块，精度更高)。
  - 提供320x240、640x480不同输入分辨率下使用widerface训练的预训练模型，更好的工作于不同的应用场景。
- - 支持onnx导出，便于移植推理。
+ - 支持onnx导出。
+ - [提供ncnn C++推理代码](https://github.com/Linzaer/Ultra-Light-Fast-Generic-Face-Detector-1MB/tree/master/ncnn)。
 
 
 ## 测试过正常的运行环境
