@@ -11,7 +11,7 @@
  - 支持onnx导出。
  - [提供NCNN C++推理代码](https://github.com/Linzaer/Ultra-Light-Fast-Generic-Face-Detector-1MB/tree/master/ncnn)。
  - [提供MNN C++推理代码](https://github.com/Linzaer/Ultra-Light-Fast-Generic-Face-Detector-1MB/tree/master/MNN)、[FP32/INT8量化后模型](https://github.com/Linzaer/Ultra-Light-Fast-Generic-Face-Detector-1MB/tree/master/MNN/model)。
- - [Caffe model](https://github.com/Linzaer/Ultra-Light-Fast-Generic-Face-Detector-1MB/tree/master/caffe/model).
+ - [提供转换后的Caffe model](https://github.com/Linzaer/Ultra-Light-Fast-Generic-Face-Detector-1MB/tree/master/caffe/model).
 
 ## 测试过正常的运行环境
 - Ubuntu16.04、Ubuntu18.04、Windows 10（inference）
