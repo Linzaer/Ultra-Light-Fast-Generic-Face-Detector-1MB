@@ -33,11 +33,11 @@ Fortunately, we can use this tool to eliminate them :
 https://github.com/daquexian/onnx-simplifier
 
 ```
-python3 -m onnxsim  version-RFB-320_without_postprocessing.onnx version-RFB-320_ncnn_slim.onnx 
+python3 -m onnxsim  version-RFB-320_without_postprocessing.onnx version-RFB-320_simplified.onnx
 
 ```
 
-Next, you can convert this onnx model like **version-RFB-320_ncnn_slim.onnx** into a ncnn model. Here is a website for online conversion : https://convertmodel.com/?tdsourcetag=s_pctim_aiomsg
+Next, you can convert this onnx model like **version-RFB-320_simplified.onnx** into a ncnn model. Here is a website for online conversion : https://convertmodel.com/?tdsourcetag=s_pctim_aiomsg
 
 * We provide converted NCNN models of version-slim-320 and version-RFB-320 in ./ncnn/data .
 ## Build
