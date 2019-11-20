@@ -1,4 +1,4 @@
-## I added several operator (Transpose/Permute/Softmax)conversion support based on [onnx2caffe](https://github.com/MTlab/onnx2caffe).
+## I added several operator(Transpose/Permute/Softmax) conversion support based on [onnx2caffe](https://github.com/MTlab/onnx2caffe).
 # Convert pytorch to Caffe by ONNX
 This tool converts [pytorch](https://github.com/pytorch/pytorch) model to [Caffe](https://github.com/BVLC/caffe) model by [ONNX](https://github.com/onnx/onnx)  
 only use for inference
