@@ -1,5 +1,23 @@
 # C++ implemententation of [Ultra-Light-Fast-Generic-Face-Detector-1MB](https://github.com/Linzaer/Ultra-Light-Fast-Generic-Face-Detector-1MB) with [NCNN](https://github.com/Tencent/ncnn)
 
+## Build
+
+```bash
+git clone --recursive --depth=1 https://github.com/Linzaer/Ultra-Light-Fast-Generic-Face-Detector-1MB
+
+cd Ultra-Light-Fast-Generic-Face-Detector-1MB/ncnn
+
+mkdir build && cd build && cmake ..
+make -j$(nproc)
+```
+
+## Run
+
+```bash
+./main ../data/version-RFB/RFB-320.bin ../data/version-RFB/RFB-320.param ../data/test.jpg
+```
+* We provide converted NCNN models of version-slim-320 and version-RFB-320 in ./ncnn/data .
+
 ## How to convert pretrained model to ncnn
 
 * Code bellow (```vision/ssd/ssd.py```) should be commented out when convert pytorch pretrained model to onnx. Comment it out and use the **convert_to_onnx.py** in official repo to finish this step.
@@ -39,28 +57,5 @@ python3 -m onnxsim  version-RFB-320_without_postprocessing.onnx version-RFB-320_
 
 Next, you can convert this onnx model like **version-RFB-320_simplified.onnx** into a ncnn model. Here is a website for online conversion : https://convertmodel.com/?tdsourcetag=s_pctim_aiomsg
 
-* We provide converted NCNN models of version-slim-320 and version-RFB-320 in ./ncnn/data .
-## Build
-
-```bash
-git clone --recursive --depth=1 https://github.com/Linzaer/Ultra-Light-Fast-Generic-Face-Detector-1MB
-
-cd Ultra-Light-Fast-Generic-Face-Detector-1MB/ncnn
-
-mkdir build && cd build && cmake ..
-make -j$(nproc)
-```
-
-## Usage
-
-```bash
-./main ../data/version-RFB/RFB-320.bin ../data/version-RFB/RFB-320.param ../data/test.jpg
-```
-
 ## PS
 * If you want to run faster, try using the version-slim model or using lower-resolution inputs like 160x120 or 128x96.
-
-
-## TODO List
-
-* totally solve the bug which was mentioned above.
