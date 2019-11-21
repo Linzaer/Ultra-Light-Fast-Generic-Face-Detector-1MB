@@ -11,7 +11,7 @@ This model is a lightweight facedetection model designed for edge computing devi
 - Support for onnx export for ease of migration and inference.
 - [Provide NCNN C++ inference code](https://github.com/Linzaer/Ultra-Light-Fast-Generic-Face-Detector-1MB/tree/master/ncnn).
 - [Provide MNN C++ inference code](https://github.com/Linzaer/Ultra-Light-Fast-Generic-Face-Detector-1MB/tree/master/MNN), [FP32/INT8 quantized models](https://github.com/Linzaer/Ultra-Light-Fast-Generic-Face-Detector-1MB/tree/master/MNN/model).
-- [Provide Caffe model](https://github.com/Linzaer/Ultra-Light-Fast-Generic-Face-Detector-1MB/tree/master/caffe/model).
+- [Provide Caffe model and conversion code](https://github.com/Linzaer/Ultra-Light-Fast-Generic-Face-Detector-1MB/tree/master/caffe/model).
 
 ## Tested the environment that works
 - Ubuntu16.04、Ubuntu18.04、Windows 10（for inference）
@@ -73,9 +73,9 @@ version-RFB| **1.11**
 
 1. Download the wideface official website dataset or download the training set I provided and extract it into the ./data folder:
 
-  (1) The clean widerface data pack after filtering out the 10px*10px small face: [Baiyun cloud disk (extraction code: x5gt)](https://pan.baidu.com/s/1m600pp-AsNot6XgIiqDlOw) 、[Google Drive](https://drive.google.com/open?id=1OBY-Pk5hkcVBX1dRBOeLI4e4OCvqJRnH )
+  (1) The clean widerface data pack after filtering out the 10px*10px small face: [Baidu cloud disk (extraction code: x5gt)](https://pan.baidu.com/s/1m600pp-AsNot6XgIiqDlOw) 、[Google Drive](https://drive.google.com/open?id=1OBY-Pk5hkcVBX1dRBOeLI4e4OCvqJRnH )
   
-  (2) Complete widerface data compression package without filtering small faces: [Baiyun cloud disk (extraction code: xeis)](https://pan.baidu.com/s/1Qusz-CjIzsILmjv6jtFpXQ)、[Google Drive](https://drive.google.com/open?id=1sbBrDRgctEkymIpCh1OZBrU5qBS-SnCP )
+  (2) Complete widerface data compression package without filtering small faces: [Baidu cloud disk (extraction code: xeis)](https://pan.baidu.com/s/1Qusz-CjIzsILmjv6jtFpXQ)、[Google Drive](https://drive.google.com/open?id=1sbBrDRgctEkymIpCh1OZBrU5qBS-SnCP )
 
 2. **(PS: If you download the filtered packets in (1) above, you don't need to perform this step)** Because the wideface has many small and unclear faces, which is not conducive to the convergence of efficient models, it needs to be filtered for training.By default,faces smaller than 10 pixels by 10 pixels will be filtered.
 run ./data/wider_face_2_voc_add_landmark.py
