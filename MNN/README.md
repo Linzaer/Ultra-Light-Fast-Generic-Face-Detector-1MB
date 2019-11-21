@@ -58,3 +58,6 @@ Next, you can convert this onnx model like **version-RFB-320_simplified.onnx** i
 
 ## PS
 * If you want to run faster, try using the version-slim model ,using lower-resolution inputs like 160x120 /128x96 or using quantified models.
+
+## Result
+![img1](https://github.com/Linzaer/Ultra-Light-Fast-Generic-Face-Detector-1MB/blob/master/MNN/result.jpg)
