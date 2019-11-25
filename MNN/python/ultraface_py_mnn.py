@@ -5,11 +5,11 @@
 @file: ultraface_py_mnn.py 
 @time: 2019-11-25 
 """
-
 from __future__ import print_function
 
 import os
 import argparse
+import sys
 import time
 from math import ceil
 
@@ -18,6 +18,7 @@ import cv2
 import numpy as np
 import torch
 
+sys.path.append('../../')
 import vision.utils.box_utils_numpy as box_utils
 
 parser = argparse.ArgumentParser(description='run ultraface with MNN in py')

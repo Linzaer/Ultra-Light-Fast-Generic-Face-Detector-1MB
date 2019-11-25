@@ -9,7 +9,7 @@ import os
 import sys
 
 import cv2
-
+sys.path.append('../')
 from vision.ssd.config.fd_config import define_img_size
 
 input_img_size = 320  # define input size ,default optional(128/160/320/480/640/1280)

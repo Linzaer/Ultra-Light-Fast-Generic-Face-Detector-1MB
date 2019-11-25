@@ -10,7 +10,7 @@ This model is a lightweight facedetection model designed for edge computing devi
 - Widerface training pre-training model with different input resolutions of 320x240 and 640x480 is provided to better work in different application scenarios.
 - Support for onnx export for ease of migration and inference.
 - [Provide NCNN C++ inference code](https://github.com/Linzaer/Ultra-Light-Fast-Generic-Face-Detector-1MB/tree/master/ncnn).
-- [Provide MNN C++ inference code](https://github.com/Linzaer/Ultra-Light-Fast-Generic-Face-Detector-1MB/tree/master/MNN), [FP32/INT8 quantized models](https://github.com/Linzaer/Ultra-Light-Fast-Generic-Face-Detector-1MB/tree/master/MNN/model).
+- [Provide MNN C++ inference code](https://github.com/Linzaer/Ultra-Light-Fast-Generic-Face-Detector-1MB/tree/master/MNN), [MNN Python inference code](https://github.com/Linzaer/Ultra-Light-Fast-Generic-Face-Detector-1MB/tree/master/MNN/python), [FP32/INT8 quantized models](https://github.com/Linzaer/Ultra-Light-Fast-Generic-Face-Detector-1MB/tree/master/MNN/model).
 - [Provide Caffe model](https://github.com/Linzaer/Ultra-Light-Fast-Generic-Face-Detector-1MB/tree/master/caffe/model) and [onnx2caffe conversion code](https://github.com/Linzaer/Ultra-Light-Fast-Generic-Face-Detector-1MB/tree/master/caffe).
 
 ## Tested the environment that works
