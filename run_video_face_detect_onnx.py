@@ -13,7 +13,7 @@ from caffe2.python.onnx import backend
 import onnxruntime as ort
 
 
-def predict(width, height, confidences, boxes, prob_threshold, iou_threshold=0.5, top_k=-1):
+def predict(width, height, confidences, boxes, prob_threshold, iou_threshold=0.3, top_k=-1):
     boxes = boxes[0]
     confidences = confidences[0]
     picked_box_probs = []

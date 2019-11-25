@@ -57,7 +57,8 @@ Next, you can convert this onnx model like **version-RFB-320_simplified.onnx** i
 
 
 ## PS
-* If you want to run faster, try using the version-slim model ,using lower-resolution inputs like 160x120 /128x96 or using quantified models.
+* Since MNN mainly accelerates  model inference on mobile, so the INT8 quantified model will run slower on **PC** than FP32 model in CPU mode.
+* If you want to run faster, try using the version-slim model ,using lower-resolution inputs like 160x120 /128x96 or using quantified models(On the mobile).
 
 ## Result
 ![img1](https://github.com/Linzaer/Ultra-Light-Fast-Generic-Face-Detector-1MB/blob/master/MNN/result.jpg)
