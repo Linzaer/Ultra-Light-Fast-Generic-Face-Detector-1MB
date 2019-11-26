@@ -52,7 +52,7 @@ def define_img_size(image_size):
     return priors
 
 
-def generate_priors(feature_map_list, shrinkage_list, image_size, min_boxes, clamp=True) -> torch.Tensor:
+def generate_priors(feature_map_list, shrinkage_list, image_size, min_boxes, clamp=True):
     priors = []
     for index in range(0, len(feature_map_list[0])):
         scale_w = image_size[0] / shrinkage_list[0][index]
