@@ -135,12 +135,8 @@ def inference():
         boxes = np.expand_dims(np.reshape(boxes, (-1, 4)), axis=0)
         scores = np.expand_dims(np.reshape(scores, (-1, 2)), axis=0)
         print("inference time: {} s".format(round(time.time() - time_time, 4)))
-
-        boxes = box_utils.convert_locations_to_boxes(
-            boxes, priors, center_variance, size_variance
-        )
+        boxes = box_utils.convert_locations_to_boxes(boxes, priors, center_variance, size_variance)
         boxes = box_utils.center_form_to_corner_form(boxes)
-
         boxes, labels, probs = predict(image_ori.shape[1], image_ori.shape[0], scores, boxes, args.threshold)
         for i in range(boxes.shape[0]):
             box = boxes[i, :]
@@ -149,6 +145,7 @@ def inference():
         print("result_pic is written to {}".format(os.path.join(result_path, file_path)))
         cv2.imshow("UltraFace_mnn_py", image_ori)
         cv2.waitKey(-1)
+    cv2.destroyAllWindows()
 
 
 if __name__ == "__main__":
