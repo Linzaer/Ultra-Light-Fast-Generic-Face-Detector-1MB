@@ -148,7 +148,7 @@ def center_form_to_corner_form(locations):
                            locations[..., :2] + locations[..., 2:] / 2], len(locations.shape) - 1)
 
 
-def inferenece():
+def inference():
     net = caffe.Net(args.caffe_prototxt_path, args.caffe_model_path, caffe.TEST)
     input_size = [int(v.strip()) for v in args.input_size.split(",")]
     witdh = input_size[0]
@@ -189,4 +189,4 @@ def inferenece():
 
 
 if __name__ == '__main__':
-    inferenece()
+    inference()
