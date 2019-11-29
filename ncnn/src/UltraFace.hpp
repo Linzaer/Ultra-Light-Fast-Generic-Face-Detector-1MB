@@ -35,7 +35,7 @@ typedef struct FaceInfo {
 class UltraFace {
 public:
     UltraFace(const std::string &bin_path, const std::string &param_path,
-              int input_size, int num_thread_ = 4, float score_threshold_ = 0.7, float iou_threshold_ = 0.3, int topk_ = -1);
+              int input_width, int input_length, int num_thread_ = 4, float score_threshold_ = 0.7, float iou_threshold_ = 0.35, int topk_ = -1);
 
     ~UltraFace();
 
@@ -61,8 +61,6 @@ private:
     float score_threshold;
     float iou_threshold;
 
-    std::string param_file_name;
-    std::string bin_file_name;
 
     const float mean_vals[3] = {127, 127, 127};
     const float norm_vals[3] = {1.0 / 128, 1.0 / 128, 1.0 / 128};
@@ -74,6 +72,7 @@ private:
             {32.0f,  48.0f},
             {64.0f,  96.0f},
             {128.0f, 192.0f, 256.0f}};
+    const std::vector<float> strides = {8.0, 16.0, 32.0, 64.0};
     std::vector<std::vector<float>> featuremap_size;
     std::vector<std::vector<float>> shrinkage_size;
     std::vector<int> w_h_list;

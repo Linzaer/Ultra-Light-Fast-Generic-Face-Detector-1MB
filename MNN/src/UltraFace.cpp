@@ -8,75 +8,26 @@
 using namespace std;
 
 UltraFace::UltraFace(const std::string &mnn_path,
-                     int input_size, int num_thread_,
+                     int input_width, int input_length, int num_thread_,
                      float score_threshold_, float iou_threshold_, int topk_) {
     num_thread = num_thread_;
     score_threshold = score_threshold_;
     iou_threshold = iou_threshold_;
-
-    switch (input_size) {
-        case 128: {
-            in_w = 128;
-            in_h = 96;
-            num_anchors = 708;
-            featuremap_size = {{16, 8, 4, 2},
-                               {12, 6, 3, 2}};
-            break;
-        }
-        case 160: {
-            in_w = 160;
-            in_h = 120;
-            num_anchors = 1118;
-            featuremap_size = {{20, 10, 5, 3},
-                               {15, 8,  4, 2}};
-            break;
-        }
-        case 320: {
-            in_w = 320;
-            in_h = 240;
-            num_anchors = 4420;
-            featuremap_size = {{40, 20, 10, 5},
-                               {30, 15, 8,  4}};
-            break;
-        }
-        case 480: {
-            in_w = 480;
-            in_h = 360;
-            num_anchors = 9984;
-            featuremap_size = {{60, 30, 15, 8},
-                               {45, 23, 12, 6}};
-            break;
-        }
-        case 640: {
-            in_w = 640;
-            in_h = 480;
-            num_anchors = 17640;
-            featuremap_size = {{80, 40, 20, 10},
-                               {60, 30, 15, 8}};
-            break;
-        }
-        case 1280: {
-            in_w = 1280;
-            in_h = 960;
-            num_anchors = 70500;
-            featuremap_size = {{160, 80, 40, 20},
-                               {120, 60, 30, 15}};
-            break;
-        }
-        default: {
-            printf("unknown input size.");
-            exit(-1);
-        }
-    }
+    in_w = input_width;
+    in_h = input_length;
     w_h_list = {in_w, in_h};
-    for (int i = 0; i < 2; ++i) {
-        std::vector<float> shrinkage_item;
-        for (int j = 0; j < featuremap_size[i].size(); ++j) {
-            shrinkage_item.push_back(w_h_list[i] / featuremap_size[i][j]);
+
+    for (auto size : w_h_list) {
+        std::vector<float> fm_item;
+        for (float stride : strides) {
+            fm_item.push_back(ceil(size / stride));
         }
-        shrinkage_size.push_back(shrinkage_item);
+        featuremap_size.push_back(fm_item);
     }
 
+    for (auto size : w_h_list) {
+        shrinkage_size.push_back(strides);
+    }
     /* generate prior anchors */
     for (int index = 0; index < num_featuremap; index++) {
         float scale_w = in_w / shrinkage_size[0][index];
@@ -86,9 +37,9 @@ UltraFace::UltraFace(const std::string &mnn_path,
                 float x_center = (i + 0.5) / scale_w;
                 float y_center = (j + 0.5) / scale_h;
 
-                for (int k = 0; k < min_boxes[index].size(); k++) {
-                    float w = min_boxes[index][k] / in_w;
-                    float h = min_boxes[index][k] / in_h;
+                for (float k : min_boxes[index]) {
+                    float w = k / in_w;
+                    float h = k / in_h;
                     priors.push_back({clip(x_center, 1), clip(y_center, 1), clip(w, 1), clip(h, 1)});
                 }
             }
@@ -96,7 +47,7 @@ UltraFace::UltraFace(const std::string &mnn_path,
     }
     /* generate prior anchors finished */
 
-
+    num_anchors = priors.size();
 
     ultraface_interpreter = std::shared_ptr<MNN::Interpreter>(MNN::Interpreter::createFromFile(mnn_path.c_str()));
     MNN::ScheduleConfig config;
@@ -108,7 +59,6 @@ UltraFace::UltraFace(const std::string &mnn_path,
     ultraface_session = ultraface_interpreter->createSession(config);
 
     input_tensor = ultraface_interpreter->getSessionInput(ultraface_session, nullptr);
-    auto shape = input_tensor->shape();
 
 }
 
@@ -128,7 +78,8 @@ int UltraFace::detect(cv::Mat &raw_image, std::vector<FaceInfo> &face_list) {
     cv::Mat image;
     cv::resize(raw_image, image, cv::Size(in_w, in_h));
 
-
+    ultraface_interpreter->resizeTensor(input_tensor, {1, 3, in_h, in_w});
+    ultraface_interpreter->resizeSession(ultraface_session);
     std::shared_ptr<MNN::CV::ImageProcess> pretreat(
             MNN::CV::ImageProcess::create(MNN::CV::BGR, MNN::CV::RGB, mean_vals, 3,
                                           norm_vals, 3));
