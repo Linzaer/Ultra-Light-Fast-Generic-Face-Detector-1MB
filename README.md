@@ -4,7 +4,7 @@
 ![img1](https://github.com/Linzaer/Ultra-Light-Fast-Generic-Face-Detector-1MB/blob/master/readme_imgs/27.jpg)
 This model is a lightweight facedetection model designed for edge computing devices.
 
-- In terms of model size, the default FP32 precision (.pth) file size is **1.04~1.1MB**, and the inference frame int8 quantization size is about **300KB**.
+- In terms of model size, the default FP32 precision (.pth) file size is **1.04~1.1MB**, and the inference framework int8 quantization size is about **300KB**.
 - In terms of the calculation amount of the model, the input resolution of 320x240 is about **90~109 MFlops**.
 - There are two versions of the model, version-slim (network backbone simplification,slightly faster) and version-RFB (with the modified RFB module, higher precision).
 - Widerface training pre-training model with different input resolutions of 320x240 and 640x480 is provided to better work in different application scenarios.
