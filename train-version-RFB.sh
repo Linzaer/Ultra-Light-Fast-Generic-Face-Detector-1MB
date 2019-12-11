@@ -6,15 +6,17 @@ mkdir -p "$log_dir"
 
 python3 -u train.py \
   --datasets \
-  ./data/wider_face_add_lm_10_10 \
+  ../SCUT_HEAD_Part_B \
   --validation_dataset \
-  ./data/wider_face_add_lm_10_10 \
+  ../SCUT_HEAD_Part_B \
   --net \
   RFB \
   --num_epochs \
-  200 \
-  --milestones \
-  "95,150" \
+  500 \
+  --scheduler \
+  cosine \
+  --t_max \
+  500 \
   --lr \
   1e-2 \
   --batch_size \
@@ -29,4 +31,10 @@ python3 -u train.py \
   ${log_dir} \
   --cuda_index \
   0 \
+  --validation_epochs \
+  20 \
+  --optimizer_type \
+  SGD \
+  --debug_steps \
+  20 \
   2>&1 | tee "$log"

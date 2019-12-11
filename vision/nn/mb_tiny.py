@@ -3,24 +3,19 @@ import torch.nn.functional as F
 
 
 class Mb_Tiny(nn.Module):
-
     def __init__(self, num_classes=2):
         super(Mb_Tiny, self).__init__()
         self.base_channel = 8 * 2
 
         def conv_bn(inp, oup, stride):
-            return nn.Sequential(
-                nn.Conv2d(inp, oup, 3, stride, 1, bias=False),
-                nn.BatchNorm2d(oup),
-                nn.ReLU(inplace=True)
-            )
+            return nn.Sequential(nn.Conv2d(inp, oup, 3, stride, 1, bias=False),
+                                 nn.BatchNorm2d(oup), nn.ReLU(inplace=True))
 
         def conv_dw(inp, oup, stride):
             return nn.Sequential(
                 nn.Conv2d(inp, inp, 3, stride, 1, groups=inp, bias=False),
                 nn.BatchNorm2d(inp),
                 nn.ReLU(inplace=True),
-
                 nn.Conv2d(inp, oup, 1, 1, 0, bias=False),
                 nn.BatchNorm2d(oup),
                 nn.ReLU(inplace=True),
@@ -34,12 +29,15 @@ class Mb_Tiny(nn.Module):
             conv_dw(self.base_channel * 2, self.base_channel * 4, 2),  # 40*30
             conv_dw(self.base_channel * 4, self.base_channel * 4, 1),
             conv_dw(self.base_channel * 4, self.base_channel * 4, 1),
-            conv_dw(self.base_channel * 4, self.base_channel * 4, 1),
+            conv_dw(self.base_channel * 4, self.base_channel * 4,
+                    1),  # source layer:7 (40,30)
             conv_dw(self.base_channel * 4, self.base_channel * 8, 2),  # 20*15
             conv_dw(self.base_channel * 8, self.base_channel * 8, 1),
-            conv_dw(self.base_channel * 8, self.base_channel * 8, 1),
+            conv_dw(self.base_channel * 8, self.base_channel * 8,
+                    1),  # source layer:10 (20,15)
             conv_dw(self.base_channel * 8, self.base_channel * 16, 2),  # 10*8
-            conv_dw(self.base_channel * 16, self.base_channel * 16, 1)
+            conv_dw(self.base_channel * 16, self.base_channel * 16,
+                    1)  # source layer:12 (10,8)
         )
         self.fc = nn.Linear(1024, num_classes)
 

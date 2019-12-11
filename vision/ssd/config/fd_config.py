@@ -4,7 +4,7 @@ from vision.utils.box_utils import generate_priors
 
 image_mean_test = image_mean = np.array([127, 127, 127])
 image_std = 128.0
-iou_threshold = 0.3
+iou_threshold = 0.01
 center_variance = 0.1
 size_variance = 0.2
 
