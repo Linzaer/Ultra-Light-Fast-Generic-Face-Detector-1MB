@@ -1,16 +1,19 @@
 from __future__ import print_function
 
+import sys
+
 import caffe
 from caffe.proto import caffe_pb2
 import onnx
 
 caffe.set_mode_cpu()
-from caffe.onnx2caffe._transformers import ConvAddFuser, ConstantsToInitializers
-from caffe.onnx2caffe._graph import Graph
+sys.path.append('../')
+from onnx2caffe._transformers import ConvAddFuser, ConstantsToInitializers
+from onnx2caffe._graph import Graph
 
-import caffe.onnx2caffe._operators as cvt
-import caffe.onnx2caffe._weightloader as wlr
-from caffe.onnx2caffe._error_utils import ErrorHandling
+import onnx2caffe._operators as cvt
+import onnx2caffe._weightloader as wlr
+from onnx2caffe._error_utils import ErrorHandling
 from onnx import shape_inference
 
 transformers = [
