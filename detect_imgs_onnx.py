@@ -14,7 +14,13 @@ from caffe2.python.onnx import backend
 import onnxruntime as ort
 
 
-def predict(width, height, confidences, boxes, prob_threshold, iou_threshold=0.5, top_k=-1):
+def predict(width,
+            height,
+            confidences,
+            boxes,
+            prob_threshold,
+            iou_threshold=0.1,
+            top_k=-1):
     boxes = boxes[0]
     confidences = confidences[0]
     picked_box_probs = []
@@ -26,11 +32,13 @@ def predict(width, height, confidences, boxes, prob_threshold, iou_threshold=0.5
         if probs.shape[0] == 0:
             continue
         subset_boxes = boxes[mask, :]
-        box_probs = np.concatenate([subset_boxes, probs.reshape(-1, 1)], axis=1)
-        box_probs = box_utils.hard_nms(box_probs,
-                                       iou_threshold=iou_threshold,
-                                       top_k=top_k,
-                                       )
+        box_probs = np.concatenate(
+            [subset_boxes, probs.reshape(-1, 1)], axis=1)
+        box_probs = box_utils.hard_nms(
+            box_probs,
+            iou_threshold=iou_threshold,
+            top_k=top_k,
+        )
         picked_box_probs.append(box_probs)
         picked_labels.extend([class_index] * box_probs.shape[0])
     if not picked_box_probs:
@@ -40,12 +48,13 @@ def predict(width, height, confidences, boxes, prob_threshold, iou_threshold=0.5
     picked_box_probs[:, 1] *= height
     picked_box_probs[:, 2] *= width
     picked_box_probs[:, 3] *= height
-    return picked_box_probs[:, :4].astype(np.int32), np.array(picked_labels), picked_box_probs[:, 4]
+    return picked_box_probs[:, :4].astype(
+        np.int32), np.array(picked_labels), picked_box_probs[:, 4]
 
 
-label_path = "models/voc-model-labels.txt"
+label_path = "models/train-version-RFB/voc-model-labels.txt"
 
-onnx_path = "models/onnx/version-RFB-320.onnx"
+onnx_path = "models/onnx/RFB-Epoch-499-Loss-2.onnx"
 class_names = [name.strip() for name in open(label_path).readlines()]
 
 predictor = onnx.load(onnx_path)
@@ -57,8 +66,8 @@ ort_session = ort.InferenceSession(onnx_path)
 input_name = ort_session.get_inputs()[0].name
 result_path = "./detect_imgs_results_onnx"
 
-threshold = 0.7
-path = "imgs"
+threshold = 0.8
+path = "../test_img"
 sum = 0
 if not os.path.exists(result_path):
     os.makedirs(result_path)
@@ -79,12 +88,18 @@ for file_path in listdir:
     time_time = time.time()
     confidences, boxes = ort_session.run(None, {input_name: image})
     print("cost time:{}".format(time.time() - time_time))
-    boxes, labels, probs = predict(orig_image.shape[1], orig_image.shape[0], confidences, boxes, threshold)
+    boxes, labels, probs = predict(orig_image.shape[1],
+                                   orig_image.shape[0],
+                                   confidences,
+                                   boxes,
+                                   threshold,
+                                   top_k=200)
     for i in range(boxes.shape[0]):
         box = boxes[i, :]
         label = f"{class_names[labels[i]]}: {probs[i]:.2f}"
 
-        cv2.rectangle(orig_image, (box[0], box[1]), (box[2], box[3]), (255, 255, 0), 4)
+        cv2.rectangle(orig_image, (box[0], box[1]), (box[2], box[3]),
+                      (255, 255, 0), 4)
 
         # cv2.putText(orig_image, label,
         #             (box[0] + 20, box[1] + 40),
