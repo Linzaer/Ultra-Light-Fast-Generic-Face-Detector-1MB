@@ -44,7 +44,7 @@ version-slim|0.853     |0.819       |0.539
 version-RFB|0.855     |**0.822**       |**0.579**
 
 > - This part mainly tests the effect of the test set under the medium and small resolutions.
-> - RetinaFace-mnet (Retinaface-Mobilenet-0.25), from a great job [insightface](https://github.com/deepinsight/insightface), when testing this network, the original image is scaled by 320 or 640 as the maximum side length, so the face will not be deformed, and the rest of the network will have a fixed size resize. At the same time, the result of the RetinaFace-mnet optimal 1600 single-scale val set was 0.887 (Easy) / 0.87 (Medium) / 0.791 (Hard).
+> - RetinaFace-mnet (Retinaface-Mobilenet-0.25), from a great job [insightface](https://github.com/deepinsight/insightface), when testing this network, the original image is scaled by 320 or 640 as the maximum side length, so the face will not be deformed, and the rest of the networks will have a fixed size resize. At the same time, the result of the RetinaFace-mnet optimal 1600 single-scale val set was 0.887 (Easy) / 0.87 (Medium) / 0.791 (Hard).
 
 ### Terminal device inference speed
 
