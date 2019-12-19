@@ -90,10 +90,8 @@ parser.add_argument('--cuda_index', default="0", type=str,
                     help='Choose cuda index.If you have 4 GPUs, you can set it like 0,1,2,3')
 parser.add_argument('--power', default=2, type=int,
                     help='poly lr pow')
-parser.add_argument('--overlap_threshold', default=0.34999999404, type=float,
+parser.add_argument('--overlap_threshold', default=0.35, type=float,
                     help='overlap_threshold')
-parser.add_argument('--iou_threshold', default=0.34999999404, type=float,
-                    help='iou_threshold')
 parser.add_argument('--optimizer_type', default="SGD", type=str,
                     help='optimizer_type')
 parser.add_argument('--input_size', default=320, type=int,
@@ -306,7 +304,7 @@ if __name__ == '__main__':
 
     net.to(DEVICE)
 
-    criterion = MultiboxLoss(config.priors, iou_threshold=args.iou_threshold, neg_pos_ratio=3,
+    criterion = MultiboxLoss(config.priors, neg_pos_ratio=3,
                              center_variance=0.1, size_variance=0.2, device=DEVICE)
     if args.optimizer_type == "SGD":
         optimizer = torch.optim.SGD(params, lr=args.lr, momentum=args.momentum,

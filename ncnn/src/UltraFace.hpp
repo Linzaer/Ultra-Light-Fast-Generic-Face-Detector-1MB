@@ -35,7 +35,7 @@ typedef struct FaceInfo {
 class UltraFace {
 public:
     UltraFace(const std::string &bin_path, const std::string &param_path,
-              int input_width, int input_length, int num_thread_ = 4, float score_threshold_ = 0.7, float iou_threshold_ = 0.35, int topk_ = -1);
+              int input_width, int input_length, int num_thread_ = 4, float score_threshold_ = 0.7, float iou_threshold_ = 0.3, int topk_ = -1);
 
     ~UltraFace();
 

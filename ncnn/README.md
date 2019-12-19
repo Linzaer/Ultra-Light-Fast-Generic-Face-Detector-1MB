@@ -55,7 +55,7 @@ python3 -m onnxsim  version-RFB-320_without_postprocessing.onnx version-RFB-320_
 
 ```
 
-Next, you can convert this onnx model like **version-RFB-320_simplified.onnx** into a ncnn model. Here is a website for online conversion : https://convertmodel.com/?tdsourcetag=s_pctim_aiomsg
+Next, you can convert this onnx model like **version-RFB-320_simplified.onnx** into a ncnn model. Here is a website for online conversion : https://convertmodel.com/?tdsourcetag=s_pctim_aiomsg. You can also use the NCNN compiled conversion tool **onnx2ncnn**.
 
 ## PS
 * If you want to run faster, try using the version-slim model or using lower-resolution inputs like 160x120 or 128x96.
