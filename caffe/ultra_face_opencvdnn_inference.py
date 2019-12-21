@@ -11,6 +11,7 @@ from cv2 import dnn
 parser = argparse.ArgumentParser()
 parser.add_argument('--caffe_prototxt_path', default="model/RFB-320/RFB-320.prototxt", type=str, help='caffe_prototxt_path')
 parser.add_argument('--caffe_model_path', default="model/RFB-320/RFB-320.caffemodel", type=str, help='caffe_model_path')
+parser.add_argument('--onnx_path', default="../models/onnx/version-RFB-320_simplified.onnx", type=str, help='onnx version')
 parser.add_argument('--input_size', default="320,240", type=str, help='define network input size,format: width,height')
 parser.add_argument('--threshold', default=0.7, type=float, help='score threshold')
 parser.add_argument('--imgs_path', default="../MNN/imgs", type=str, help='imgs dir')
@@ -144,7 +145,8 @@ def center_form_to_corner_form(locations):
 
 
 def inference():
-    net = dnn.readNetFromCaffe(args.caffe_prototxt_path, args.caffe_model_path)
+    net = dnn.readNetFromONNX(args.onnx_path)  # onnx version
+    # net = dnn.readNetFromCaffe(args.caffe_prototxt_path, args.caffe_model_path)  # caffe model converted from onnx
     input_size = [int(v.strip()) for v in args.input_size.split(",")]
     witdh = input_size[0]
     height = input_size[1]
