@@ -73,9 +73,9 @@ version-RFB| **1.11**
 
 1. 下载widerface官网数据集或者下载我提供的训练集解压放入./data文件夹内：
 
-  （1）过滤掉10px*10px 小人脸后的干净widerface数据压缩包 ：[百度云盘 (提取码：x5gt)](https://pan.baidu.com/s/1m600pp-AsNot6XgIiqDlOw ) 、[Google Drive](https://drive.google.com/open?id=1OBY-Pk5hkcVBX1dRBOeLI4e4OCvqJRnH )
+  （1）过滤掉10px*10px 小人脸后的干净widerface数据压缩包 ：[百度云盘 (提取码：cbiu)](https://pan.baidu.com/s/1MR0ZOKHUP_ArILjbAn03sw ) 、[Google Drive](https://drive.google.com/open?id=1OBY-Pk5hkcVBX1dRBOeLI4e4OCvqJRnH )
   
-  （2）未过滤小人脸的完整widerface数据压缩包 ：[百度云盘 (提取码：xeis)](https://pan.baidu.com/s/1Qusz-CjIzsILmjv6jtFpXQ ) 、[Google Drive](https://drive.google.com/open?id=1sbBrDRgctEkymIpCh1OZBrU5qBS-SnCP )
+  （2）未过滤小人脸的完整widerface数据压缩包 ：[百度云盘 (提取码：ievk)](https://pan.baidu.com/s/1faHNz9ZrtEmr_yw48GW7ZA ) 、[Google Drive](https://drive.google.com/open?id=1sbBrDRgctEkymIpCh1OZBrU5qBS-SnCP )
   
 2. **（PS:如果下载的是过滤后的上述(1)中的数据包，则不需要执行这步）** 由于widerface存在很多极小的不清楚的人脸，不太利于高效模型的收敛，所以需要过滤训练，默认过滤人脸大小10像素x10像素以下的人脸。
 运行./data/wider_face_2_voc_add_landmark.py
