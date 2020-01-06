@@ -1,6 +1,6 @@
 python run_video_face_detect.py \
---net_type RFB \
+--net_type slim \
 --input_size 320 \
 --threshold 0.85 \
 --candidate_size 200 \
---video_path test3.mp4
+--video_path test4.mp4

@@ -59,7 +59,7 @@ cap = cv2.VideoCapture(args.video_path)  # capture from video
 fps = cap.get(cv2.CAP_PROP_FPS)
 size = (int(cap.get(cv2.CAP_PROP_FRAME_WIDTH)),
         int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT)))
-videoWriter = cv2.VideoWriter('out4.mp4', cv2.VideoWriter_fourcc(*'mp4v'), fps,
+videoWriter = cv2.VideoWriter('out4-slim.mp4', cv2.VideoWriter_fourcc(*'mp4v'), fps,
                               size)
 # cap = cv2.VideoCapture(0)  # capture from camera
 
@@ -93,27 +93,18 @@ net.load(model_path)
 
 timer = Timer()
 sum = 0
+
 while True:
+    timer.start()
     ret, orig_image = cap.read()
     if orig_image is None:
         print("end")
         break
     image = cv2.cvtColor(orig_image, cv2.COLOR_BGR2RGB)
-    timer.start()
+
     boxes, labels, probs = predictor.predict(image, candidate_size / 2,
                                              threshold)
-    interval = timer.end()
-    print('Time: {:.6f}s, Detect Objects: {:d}.'.format(
-        interval, labels.size(0)))
-    fps = 'fps: %d' % (1 / interval)
-    cv2.putText(
-        orig_image,
-        fps,
-        (20, 60),
-        cv2.FONT_HERSHEY_SIMPLEX,
-        1,  # font scale
-        (0, 255, 242),
-        2)  # line type
+
     for i in range(boxes.size(0)):
         box = boxes[i, :]
         if max(box[2] - box[0], box[3] - box[1]) < 100:  # TODO: 过滤掉较小的bbox
@@ -131,10 +122,24 @@ while True:
             (0, 255, 0),
             1)  # line type
 
+    interval = timer.end()
+    print('Time: {:.6f}s, Detect Objects: {:d}.'.format(
+        interval, labels.size(0)))
+    fps = 'fps: %d' % (1 / interval)
+    cv2.putText(
+        orig_image,
+        fps,
+        (60, 110),
+        cv2.FONT_HERSHEY_SIMPLEX,
+        2,  # font scale
+        (0, 255, 242),
+        2)  # line type
+
     # orig_image = cv2.resize(orig_image, None, None, fx=0.8, fy=0.8)
     sum += boxes.size(0)
     # cv2.imshow('annotated', orig_image)
     videoWriter.write(orig_image)
+
     # if cv2.waitKey(1) & 0xFF == ord('q'):
     # break
 cap.release()
