@@ -146,6 +146,7 @@ sh train-version-slim.sh or sh train-version-RFB.sh
 ## Third-party related projects
  - [NNCase C++ inference code](https://github.com/kendryte/nncase/tree/master/examples/fast_facedetect)
  - [UltraFaceDotNet (C#)](https://github.com/takuya-takeuchi/UltraFaceDotNet)
+ - [faceDetect-ios](https://github.com/Ian778/faceDetect-ios)
   
 ##  Reference
 - [pytorch-ssd](https://github.com/qfgaohao/pytorch-ssd)
