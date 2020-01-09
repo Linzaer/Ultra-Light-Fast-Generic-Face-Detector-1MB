@@ -27,4 +27,6 @@ only use for inference
 * Transpose/Permute (new)
 * Softmax (new)
 
-PS: You need to use [onnx-simplifier](https://github.com/daquexian/onnx-simplifier) to simplify onnx model and then run convertCaffe.py to convert it into caffe model.
+## PS:
+* You need to use [onnx-simplifier](https://github.com/daquexian/onnx-simplifier) to simplify onnx model and then run convertCaffe.py to convert it into caffe model.
+* You need to install [ssd-caffe](https://github.com/weiliu89/caffe/tree/ssd) and pycaffe of ssd-caffe.
