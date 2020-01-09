@@ -12,7 +12,8 @@ This model is a lightweight facedetection model designed for edge computing devi
 - [Provide NCNN C++ inference code](https://github.com/Linzaer/Ultra-Light-Fast-Generic-Face-Detector-1MB/tree/master/ncnn).
 - [Provide MNN C++ inference code](https://github.com/Linzaer/Ultra-Light-Fast-Generic-Face-Detector-1MB/tree/master/MNN), [MNN Python inference code](https://github.com/Linzaer/Ultra-Light-Fast-Generic-Face-Detector-1MB/tree/master/MNN/python), [FP32/INT8 quantized models](https://github.com/Linzaer/Ultra-Light-Fast-Generic-Face-Detector-1MB/tree/master/MNN/model).
 - [Provide Caffe model](https://github.com/Linzaer/Ultra-Light-Fast-Generic-Face-Detector-1MB/tree/master/caffe/model) and [onnx2caffe conversion code](https://github.com/Linzaer/Ultra-Light-Fast-Generic-Face-Detector-1MB/tree/master/caffe).
-
+- [Caffe python inference code](https://github.com/Linzaer/Ultra-Light-Fast-Generic-Face-Detector-1MB/blob/master/caffe/ultra_face_caffe_inference.py) and [OpencvDNN inference code](https://github.com/Linzaer/Ultra-Light-Fast-Generic-Face-Detector-1MB/blob/master/caffe/ultra_face_opencvdnn_inference.py).
+ 
 ## Tested the environment that works
 - Ubuntu16.04、Ubuntu18.04、Windows 10（for inference）
 - Python3.6
@@ -48,7 +49,7 @@ version-RFB|0.855     |**0.822**       |**0.579**
 
 ### Terminal device inference speed
 
-- Raspberry Pi 4B MNN inference test time **(unit: ms)** (ARM/A72x4/1.5GHz/input resolution: **320x240** /int8 quantization)
+- Raspberry Pi 4B MNN Inference Latency **(unit: ms)** (ARM/A72x4/1.5GHz/input resolution: **320x240** /int8 quantization)
 
 Model|1 core|2 core|3 core|4 core
 ------|--------|----------|--------|--------
@@ -57,6 +58,12 @@ Official Retinaface-Mobilenet-0.25 (Mxnet)   |46|25|18.5|15
 version-slim|29     |**16**       |**12**|**9.5**
 version-RFB|35     |19.6       |14.8| 11
 
+- iPhone 6s Plus MNN (version tag：0.2.1.5) Inference Latency ( input resolution : **320x240** )[Data comes from  MNN official](https://www.yuque.com/mnn/en/demo_zoo#bXsRY)
+
+Model|Inference Latency(ms)
+------|--------
+slim-320 |6.33
+RFB-320|7.8
 
 ### Model size comparison
 - Comparison of several open source lightweight face detection models:
@@ -133,9 +140,13 @@ sh train-version-slim.sh or sh train-version-RFB.sh
  - [Widerface test code](https://github.com/Linzaer/Ultra-Light-Fast-Generic-Face-Detector-1MB/tree/master/widerface_evaluate)
  - [NCNN C++ inference code](https://github.com/Linzaer/Ultra-Light-Fast-Generic-Face-Detector-1MB/tree/master/ncnn) ([vealocia](https://github.com/vealocia))
  - [MNN C++ inference code](https://github.com/Linzaer/Ultra-Light-Fast-Generic-Face-Detector-1MB/tree/master/MNN), [MNN Python inference code](https://github.com/Linzaer/Ultra-Light-Fast-Generic-Face-Detector-1MB/tree/master/MNN/python)
+ - [Caffe model](https://github.com/Linzaer/Ultra-Light-Fast-Generic-Face-Detector-1MB/tree/master/caffe/model) and [onnx2caffe conversion code](https://github.com/Linzaer/Ultra-Light-Fast-Generic-Face-Detector-1MB/tree/master/caffe)
+ - [Caffe python inference code](https://github.com/Linzaer/Ultra-Light-Fast-Generic-Face-Detector-1MB/blob/master/caffe/ultra_face_caffe_inference.py) and [OpencvDNN inference code](https://github.com/Linzaer/Ultra-Light-Fast-Generic-Face-Detector-1MB/blob/master/caffe/ultra_face_opencvdnn_inference.py)
+  
+## Third-party related projects
  - [NNCase C++ inference code](https://github.com/kendryte/nncase/tree/master/examples/fast_facedetect)
- - [Caffe model](https://github.com/Linzaer/Ultra-Light-Fast-Generic-Face-Detector-1MB/tree/master/caffe/model) and [onnx2caffe conversion code](https://github.com/Linzaer/Ultra-Light-Fast-Generic-Face-Detector-1MB/tree/master/caffe).
- 
+ - [UltraFaceDotNet (C#)](https://github.com/takuya-takeuchi/UltraFaceDotNet)
+  
 ##  Reference
 - [pytorch-ssd](https://github.com/qfgaohao/pytorch-ssd)
 - [libfacedetection](https://github.com/ShiqiYu/libfacedetection/)

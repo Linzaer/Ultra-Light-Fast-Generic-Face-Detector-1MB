@@ -12,6 +12,7 @@
  - [提供NCNN C++推理代码](https://github.com/Linzaer/Ultra-Light-Fast-Generic-Face-Detector-1MB/tree/master/ncnn)。
  - [提供MNN C++推理代码](https://github.com/Linzaer/Ultra-Light-Fast-Generic-Face-Detector-1MB/tree/master/MNN)、[MNN Python推理代码](https://github.com/Linzaer/Ultra-Light-Fast-Generic-Face-Detector-1MB/tree/master/MNN/python)、[FP32/INT8量化后模型](https://github.com/Linzaer/Ultra-Light-Fast-Generic-Face-Detector-1MB/tree/master/MNN/model)。
  - [提供转换后的Caffe model](https://github.com/Linzaer/Ultra-Light-Fast-Generic-Face-Detector-1MB/tree/master/caffe/model) 和 [onnx2caffe 转换代码](https://github.com/Linzaer/Ultra-Light-Fast-Generic-Face-Detector-1MB/tree/master/caffe)。
+ - [Caffe python 推理代码](https://github.com/Linzaer/Ultra-Light-Fast-Generic-Face-Detector-1MB/blob/master/caffe/ultra_face_caffe_inference.py) 和 [OpencvDNN推理代码](https://github.com/Linzaer/Ultra-Light-Fast-Generic-Face-Detector-1MB/blob/master/caffe/ultra_face_opencvdnn_inference.py)。
 
 ## 测试过正常的运行环境
 - Ubuntu16.04、Ubuntu18.04、Windows 10（inference）
@@ -48,7 +49,7 @@ version-RFB|0.855     |**0.822**       |**0.579**
 
 ### 终端设备推理速度
 
-- 树莓派4B MNN推理测试耗时 **(单位：ms)**（ARM/A72x4/1.5GHz/输入分辨率 : **320x240** /int8量化） 
+- 树莓派4B MNN推理测试耗时 **(单位：ms)**（ARM/A72x4/1.5GHz/输入分辨率 : **320x240** ） 
 
 模型|1核|2核|3核|4核
 ------|--------|----------|--------|--------
@@ -57,6 +58,12 @@ libfacedetection v1|**28**    |**16**|**12**|9.7
 version-slim|29     |**16**       |**12**|**9.5**
 version-RFB|35     |19.6       |14.8| 11
 
+- iPhone 6s Plus MNN (版本Tag：0.2.1.5) 推理测试耗时（输入分辨率 : **320x240** ）[数据来自MNN官方](https://www.yuque.com/mnn/en/demo_zoo#bXsRY)
+
+模型|耗时（ms）
+------|--------
+slim-320 |6.33
+RFB-320|7.8
 
 ### 模型大小比较
 - 若干开源轻量级人脸检测模型大小比较 ：
@@ -131,12 +138,16 @@ sh train-version-slim.sh 或者 sh train-version-RFB.sh
  - 完善测试数据
 
  
-## Completed list
+## 已完成功能清单
  - [Widerface测试代码](https://github.com/Linzaer/Ultra-Light-Fast-Generic-Face-Detector-1MB/tree/master/widerface_evaluate)
  - [NCNN C++推理代码](https://github.com/Linzaer/Ultra-Light-Fast-Generic-Face-Detector-1MB/tree/master/ncnn) ([vealocia](https://github.com/vealocia))
  - [MNN C++推理代码](https://github.com/Linzaer/Ultra-Light-Fast-Generic-Face-Detector-1MB/tree/master/MNN)、[MNN Python推理代码](https://github.com/Linzaer/Ultra-Light-Fast-Generic-Face-Detector-1MB/tree/master/MNN/python)
- - [NNCase C++推理代码](https://github.com/kendryte/nncase/tree/master/examples/fast_facedetect)
  - [Caffe model](https://github.com/Linzaer/Ultra-Light-Fast-Generic-Face-Detector-1MB/tree/master/caffe/model) 和 [onnx2caffe 转换代码](https://github.com/Linzaer/Ultra-Light-Fast-Generic-Face-Detector-1MB/tree/master/caffe)
+ - [Caffe python 推理代码](https://github.com/Linzaer/Ultra-Light-Fast-Generic-Face-Detector-1MB/blob/master/caffe/ultra_face_caffe_inference.py) 和 [OpencvDNN推理代码](https://github.com/Linzaer/Ultra-Light-Fast-Generic-Face-Detector-1MB/blob/master/caffe/ultra_face_opencvdnn_inference.py)
+  
+## 第三方相关工程
+ - [NNCase C++推理代码](https://github.com/kendryte/nncase/tree/master/examples/fast_facedetect)
+ - [UltraFaceDotNet (C#)](https://github.com/takuya-takeuchi/UltraFaceDotNet)
  
 ##  Reference
  - [pytorch-ssd](https://github.com/qfgaohao/pytorch-ssd)
