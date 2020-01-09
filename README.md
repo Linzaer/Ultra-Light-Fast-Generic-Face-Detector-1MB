@@ -62,8 +62,8 @@ version-RFB|35     |19.6       |14.8| 11
 
 Model|Inference Latency(ms)
 ------|--------
-slim-320 |6.33
-RFB-320|7.8
+[slim-320](https://github.com/Linzaer/Ultra-Light-Fast-Generic-Face-Detector-1MB/blob/master/MNN/model/version-slim/slim-320.mnn) |6.33
+[RFB-320](https://github.com/Linzaer/Ultra-Light-Fast-Generic-Face-Detector-1MB/blob/master/MNN/model/version-RFB/RFB-320.mnn)|7.8
 
 ### Model size comparison
 - Comparison of several open source lightweight face detection models:
