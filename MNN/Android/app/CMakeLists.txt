@@ -11,14 +11,14 @@ set_target_properties(lib_opencv
 					   				 							  
 add_library(MNN SHARED IMPORTED)
 add_library(MNN_CL SHARED IMPORTED)
-#add_library(MNN_GL SHARED IMPORTED)
+add_library(MNN_GL SHARED IMPORTED)
 set_target_properties(MNN
   PROPERTIES IMPORTED_LOCATION
   ${CMAKE_SOURCE_DIR}/src/main/jniLibs/${ANDROID_ABI}/libMNN.so)
 set_target_properties(MNN_CL
   PROPERTIES IMPORTED_LOCATION
   ${CMAKE_SOURCE_DIR}/src/main/jniLibs/${ANDROID_ABI}/libMNN_CL.so)
-#set_target_properties(MNN_GL
+set_target_properties(MNN_GL
   PROPERTIES IMPORTED_LOCATION
   ${CMAKE_SOURCE_DIR}/src/main/jniLibs/${ANDROID_ABI}/libMNN_GL.so)
 
