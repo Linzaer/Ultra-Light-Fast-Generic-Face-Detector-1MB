@@ -51,9 +51,9 @@ find_library( jnigraphics-lib jnigraphics )
 add_definitions(-DMNN_USE_LOGCAT)
 target_link_libraries(facedetect
                        MNN
-                       MNN_CL
-		       MNN_GL
-		       lib_opencv
+					   MNN_CL
+#					   MNN_GL
+					   lib_opencv
                        jnigraphics
                        z
                        ${log-lib})

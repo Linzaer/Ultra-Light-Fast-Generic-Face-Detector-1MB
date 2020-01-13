@@ -53,6 +53,11 @@ public class MainActivity extends Activity {
             Manifest.permission.CAMERA
     };
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        faceSDKNative.FaceDetectionModelUnInit();
+    }
 
     /**
      * Called when the activity is first created.
