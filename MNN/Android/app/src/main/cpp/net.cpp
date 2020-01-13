@@ -84,7 +84,6 @@ int Inference_engine::infer_img(cv::Mat& img, Inference_engine_tensor& out)
         netPtr->resizeTensor(tensorPtr, dims);
         netPtr->resizeSession(sessionPtr);
     }
-    //LOGD("1111111111111111111");
 
     std::unique_ptr<MNN::CV::ImageProcess> process(MNN::CV::ImageProcess::create(MNN::CV::BGR, MNN::CV::RGB, config.mean, 3, config.normal, 3));
     process->convert((const unsigned char*)img.data, img.cols, img.rows, img.step[0], tensorPtr);
@@ -102,88 +101,20 @@ int Inference_engine::infer_img(cv::Mat& img, Inference_engine_tensor& out)
         std::vector<int> shape = tensorOutPtr->shape();
 //        cv::Mat feat(shape.size(), &shape[0], CV_32F);
 
-      auto tensor = reinterpret_cast<MNN::Tensor*>(tensorOutPtr);
+	auto tensor = reinterpret_cast<MNN::Tensor*>(tensorOutPtr);
 
-//        if (nullptr == destPtr)
-//        {
-//            std::unique_ptr<MNN::Tensor> hostTensor(new MNN::Tensor(tensor, tensor->getDimensionType(), false));
-//            return hostTensor->elementSize();
-//        }
+	std::vector <float> destPtr;
+	std::unique_ptr<MNN::Tensor> hostTensor(new MNN::Tensor(tensor, tensor->getDimensionType(), true));
+	tensor->copyToHostTensor(hostTensor.get());
+	tensor = hostTensor.get();
 
-        std::vector <float> destPtr;
-        std::unique_ptr<MNN::Tensor> hostTensor(new MNN::Tensor(tensor, tensor->getDimensionType(), true));
-        tensor->copyToHostTensor(hostTensor.get());
-        tensor = hostTensor.get();
-
-        auto size = tensorOutPtr->elementSize();
-        for(int i=0 ; i < size * sizeof(float); i++ )
-            destPtr.push_back(tensorOutPtr->host<float>()[i]);
-        //::memcpy(destPtr.data(), tensorOutPtr->host<float>(), size * sizeof(float));
-        //LOGD("-----%f", destPtr[0]);
-        out.out_feat.push_back(destPtr);
+	auto size = tensorOutPtr->elementSize();
+	for(int i=0 ; i < size * sizeof(float); i++ )
+	    destPtr.push_back(tensorOutPtr->host<float>()[i]);
+	//::memcpy(destPtr.data(), tensorOutPtr->host<float>(), size * sizeof(float));
+	//LOGD("-----%f", destPtr[0]);
+	out.out_feat.push_back(destPtr);
     }
 
     return 0;
 }
-//int Inference_engine::infer_img(cv::Mat& img, Inference_engine_tensor& out)
-//{
-//    MNN::Tensor* tensorPtr = netPtr->getSessionInput(sessionPtr, nullptr);
-//
-//    // auto resize for full conv network.
-//    bool auto_resize = false;
-//    if ( !auto_resize )
-//    {
-//        std::vector<int>dims = { 1, img.channels(), img.rows, img.cols };
-//        netPtr->resizeTensor(tensorPtr, dims);
-//        netPtr->resizeSession(sessionPtr);
-//    }
-//
-//    std::unique_ptr<MNN::CV::ImageProcess> process(MNN::CV::ImageProcess::create(config));
-//    process->convert((const unsigned char*)img.data, img.cols, img.rows, img.step[0], tensorPtr);
-//    netPtr->runSession(sessionPtr);
-//
-//    for (int i = 0; i < out.layer_name.size(); i++)
-//    {
-//        const char* layer_name = NULL;
-//        if( strcmp(out.layer_name[i].c_str(), "") != 0)
-//        {
-//            layer_name = out.layer_name[i].c_str();
-//        }
-//
-//        MNN::Tensor* tensorOutPtr = netPtr->getSessionOutput(sessionPtr, layer_name);
-//
-//
-//        std::vector<int> shape = tensorOutPtr->shape();
-//        cv::Mat feat(shape.size(), &shape[0], CV_32F);
-//
-//        auto tensor = reinterpret_cast<MNN::Tensor*>(tensorOutPtr);
-//        float *destPtr = (float*)feat.data;
-//        if (nullptr == destPtr)
-//        {
-//            std::unique_ptr<MNN::Tensor> hostTensor(new MNN::Tensor(tensor, tensor->getDimensionType(), false));
-//            return hostTensor->elementSize();
-//        }
-//
-//        std::unique_ptr<MNN::Tensor> hostTensor(new MNN::Tensor(tensor, tensor->getDimensionType(), true));
-//        tensor->copyToHostTensor(hostTensor.get());
-//        tensor = hostTensor.get();
-//
-//        auto size = tensor->elementSize();
-//        ::memcpy(destPtr, tensor->host<float>(), size * sizeof(float));
-//
-//        LOGD("tensorOutPtr = %f", destPtr[0]);
-//        out.out_feat.push_back(feat.clone());
-//    }
-//
-//    return 0;
-//}
-
-//int Inference_engine::infer_imgs(std::vector<cv::Mat>& imgs, std::vector<Inference_engine_tensor>& out)
-//{
-//    for (int i = 0; i < imgs.size(); i++)
-//    {
-//        infer_img(imgs[i], out[i]);
-//    }
-//
-//    return 0;
-//}
