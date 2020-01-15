@@ -70,7 +70,7 @@ Model|Inference Latency(ms)
 Model|Inference Latency(ms)
 ------|--------
 [slim-320](https://github.com/kendryte/nncase/tree/master/examples/fast_facedetect/k210/kpu_fast_facedetect_example/slim-320.kmodel)|65.6
-[RFB-320](https://github.com/kendryte/nncase/tree/master/examples/fast_facedetect/k210/kpu_fast_facedetect_example/RFB-320.kmodel)|796.2
+[RFB-320](https://github.com/kendryte/nncase/tree/master/examples/fast_facedetect/k210/kpu_fast_facedetect_example/RFB-320.kmodel)|164.8
 
 ### Model size comparison
 - Comparison of several open source lightweight face detection models:

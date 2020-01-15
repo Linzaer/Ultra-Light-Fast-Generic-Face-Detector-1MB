@@ -70,7 +70,7 @@ version-RFB|35     |19.6       |14.8| 11
 Model|Inference Latency(ms)
 ------|--------
 [slim-320](https://github.com/kendryte/nncase/tree/master/examples/fast_facedetect/k210/kpu_fast_facedetect_example/slim-320.kmodel)|65.6
-[RFB-320](https://github.com/kendryte/nncase/tree/master/examples/fast_facedetect/k210/kpu_fast_facedetect_example/RFB-320.kmodel)|796.2
+[RFB-320](https://github.com/kendryte/nncase/tree/master/examples/fast_facedetect/k210/kpu_fast_facedetect_example/RFB-320.kmodel)|164.8
 
 ### 模型大小比较
 - 若干开源轻量级人脸检测模型大小比较 ：
