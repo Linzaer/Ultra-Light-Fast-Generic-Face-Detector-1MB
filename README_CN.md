@@ -65,6 +65,13 @@ version-RFB|35     |19.6       |14.8| 11
 [slim-320](https://github.com/Linzaer/Ultra-Light-Fast-Generic-Face-Detector-1MB/blob/master/MNN/model/version-slim/slim-320.mnn) |6.33
 [RFB-320](https://github.com/Linzaer/Ultra-Light-Fast-Generic-Face-Detector-1MB/blob/master/MNN/model/version-RFB/RFB-320.mnn)|7.8
 
+- [Kendryte K210](https://kendryte.com/) NNCase 推理测试耗时 (RISC-V/400MHz/输入分辨率 : **320x240** /int8 量化) [数据来自NNCase](https://github.com/kendryte/nncase/tree/master/examples/fast_facedetect)
+
+Model|Inference Latency(ms)
+------|--------
+[slim-320](https://github.com/kendryte/nncase/tree/master/examples/fast_facedetect/k210/kpu_fast_facedetect_example/slim-320.kmodel)|65.6
+[RFB-320](https://github.com/kendryte/nncase/tree/master/examples/fast_facedetect/k210/kpu_fast_facedetect_example/RFB-320.kmodel)|164.8
+
 ### 模型大小比较
 - 若干开源轻量级人脸检测模型大小比较 ：
 

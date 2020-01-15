@@ -65,6 +65,13 @@ Model|Inference Latency(ms)
 [slim-320](https://github.com/Linzaer/Ultra-Light-Fast-Generic-Face-Detector-1MB/blob/master/MNN/model/version-slim/slim-320.mnn) |6.33
 [RFB-320](https://github.com/Linzaer/Ultra-Light-Fast-Generic-Face-Detector-1MB/blob/master/MNN/model/version-RFB/RFB-320.mnn)|7.8
 
+- [Kendryte K210](https://kendryte.com/) NNCase Inference Latency (RISC-V/400MHz/input resolution: **320x240** /int8 quantization)[Data comes from NNCase](https://github.com/kendryte/nncase/tree/master/examples/fast_facedetect)
+
+Model|Inference Latency(ms)
+------|--------
+[slim-320](https://github.com/kendryte/nncase/tree/master/examples/fast_facedetect/k210/kpu_fast_facedetect_example/slim-320.kmodel)|65.6
+[RFB-320](https://github.com/kendryte/nncase/tree/master/examples/fast_facedetect/k210/kpu_fast_facedetect_example/RFB-320.kmodel)|164.8
+
 ### Model size comparison
 - Comparison of several open source lightweight face detection models:
 
