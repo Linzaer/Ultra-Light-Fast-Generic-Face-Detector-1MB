@@ -156,6 +156,7 @@ sh train-version-slim.sh 或者 sh train-version-RFB.sh
  - [NNCase C++推理代码](https://github.com/kendryte/nncase/tree/master/examples/fast_facedetect)
  - [UltraFaceDotNet (C#)](https://github.com/takuya-takeuchi/UltraFaceDotNet)
  - [faceDetect-ios](https://github.com/Ian778/faceDetect-ios)
+ - [Android-FaceDetection-UltraNet-MNN](https://github.com/jackweiwang/Android-FaceDetection-UltraNet-MNN)
   
 ##  Reference
  - [pytorch-ssd](https://github.com/qfgaohao/pytorch-ssd)
