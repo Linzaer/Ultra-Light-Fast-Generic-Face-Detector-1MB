@@ -161,7 +161,8 @@ def inference():
         img_ori = cv2.imread(img_path)
         rect = cv2.resize(img_ori, (witdh, height))
         rect = cv2.cvtColor(rect, cv2.COLOR_BGR2RGB)
-        net.setInput(dnn.blobFromImage(rect, 1 / image_std, (witdh, height), 127))
+        net.setInput(dnn.blobFromImage(rect, 1 / image_std, (witdh, height),
+            (127, 127, 127)))
         time_time = time.time()
         boxes, scores = net.forward(["boxes", "scores"])
         print("inference time: {} s".format(round(time.time() - time_time, 4)))
