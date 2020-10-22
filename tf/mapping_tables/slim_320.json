@@ -1,0 +1,496 @@
+[
+  {
+    "name": "basenet.0.0_conv",
+    "weight": [
+      "base_net.0.0.weight"
+    ]
+  },
+  {
+    "name": "basenet.0.1_bn",
+    "weight": [
+      "base_net.0.1.weight",
+      "base_net.0.1.bias",
+      "base_net.0.1.running_mean",
+      "base_net.0.1.running_var"
+    ]
+  },
+  {
+    "name": "basenet.1.0_dconv",
+    "weight": [
+      "base_net.1.0.weight"
+    ]
+  },
+  {
+    "name": "basenet.1.1_bn",
+    "weight": [
+      "base_net.1.1.weight",
+      "base_net.1.1.bias",
+      "base_net.1.1.running_mean",
+      "base_net.1.1.running_var"
+    ]
+  },
+  {
+    "name": "basenet.1.3_conv",
+    "weight": [
+      "base_net.1.3.weight"
+    ]
+  },
+  {
+    "name": "basenet.1.4_bn",
+    "weight": [
+      "base_net.1.4.weight",
+      "base_net.1.4.bias",
+      "base_net.1.4.running_mean",
+      "base_net.1.4.running_var"
+    ]
+  },
+  {
+    "name": "basenet.2.0_dconv",
+    "weight": [
+      "base_net.2.0.weight"
+    ]
+  },
+  {
+    "name": "basenet.2.1_bn",
+    "weight": [
+      "base_net.2.1.weight",
+      "base_net.2.1.bias",
+      "base_net.2.1.running_mean",
+      "base_net.2.1.running_var"
+    ]
+  },
+  {
+    "name": "basenet.2.3_conv",
+    "weight": [
+      "base_net.2.3.weight"
+    ]
+  },
+  {
+    "name": "basenet.2.4_bn",
+    "weight": [
+      "base_net.2.4.weight",
+      "base_net.2.4.bias",
+      "base_net.2.4.running_mean",
+      "base_net.2.4.running_var"
+    ]
+  },
+  {
+    "name": "basenet.3.0_dconv",
+    "weight": [
+      "base_net.3.0.weight"
+    ]
+  },
+  {
+    "name": "basenet.3.1_bn",
+    "weight": [
+      "base_net.3.1.weight",
+      "base_net.3.1.bias",
+      "base_net.3.1.running_mean",
+      "base_net.3.1.running_var"
+    ]
+  },
+  {
+    "name": "basenet.3.3_conv",
+    "weight": [
+      "base_net.3.3.weight"
+    ]
+  },
+  {
+    "name": "basenet.3.4_bn",
+    "weight": [
+      "base_net.3.4.weight",
+      "base_net.3.4.bias",
+      "base_net.3.4.running_mean",
+      "base_net.3.4.running_var"
+    ]
+  },
+  {
+    "name": "basenet.4.0_dconv",
+    "weight": [
+      "base_net.4.0.weight"
+    ]
+  },
+  {
+    "name": "basenet.4.1_bn",
+    "weight": [
+      "base_net.4.1.weight",
+      "base_net.4.1.bias",
+      "base_net.4.1.running_mean",
+      "base_net.4.1.running_var"
+    ]
+  },
+  {
+    "name": "basenet.4.3_conv",
+    "weight": [
+      "base_net.4.3.weight"
+    ]
+  },
+  {
+    "name": "basenet.4.4_bn",
+    "weight": [
+      "base_net.4.4.weight",
+      "base_net.4.4.bias",
+      "base_net.4.4.running_mean",
+      "base_net.4.4.running_var"
+    ]
+  },
+  {
+    "name": "basenet.5.0_dconv",
+    "weight": [
+      "base_net.5.0.weight"
+    ]
+  },
+  {
+    "name": "basenet.5.1_bn",
+    "weight": [
+      "base_net.5.1.weight",
+      "base_net.5.1.bias",
+      "base_net.5.1.running_mean",
+      "base_net.5.1.running_var"
+    ]
+  },
+  {
+    "name": "basenet.5.3_conv",
+    "weight": [
+      "base_net.5.3.weight"
+    ]
+  },
+  {
+    "name": "basenet.5.4_bn",
+    "weight": [
+      "base_net.5.4.weight",
+      "base_net.5.4.bias",
+      "base_net.5.4.running_mean",
+      "base_net.5.4.running_var"
+    ]
+  },
+  {
+    "name": "basenet.6.0_dconv",
+    "weight": [
+      "base_net.6.0.weight"
+    ]
+  },
+  {
+    "name": "basenet.6.1_bn",
+    "weight": [
+      "base_net.6.1.weight",
+      "base_net.6.1.bias",
+      "base_net.6.1.running_mean",
+      "base_net.6.1.running_var"
+    ]
+  },
+  {
+    "name": "basenet.6.3_conv",
+    "weight": [
+      "base_net.6.3.weight"
+    ]
+  },
+  {
+    "name": "basenet.6.4_bn",
+    "weight": [
+      "base_net.6.4.weight",
+      "base_net.6.4.bias",
+      "base_net.6.4.running_mean",
+      "base_net.6.4.running_var"
+    ]
+  },
+  {
+    "name": "basenet.7.0_dconv",
+    "weight": [
+      "base_net.7.0.weight"
+    ]
+  },
+  {
+    "name": "basenet.7.1_bn",
+    "weight": [
+      "base_net.7.1.weight",
+      "base_net.7.1.bias",
+      "base_net.7.1.running_mean",
+      "base_net.7.1.running_var"
+    ]
+  },
+  {
+    "name": "basenet.7.3_conv",
+    "weight": [
+      "base_net.7.3.weight"
+    ]
+  },
+  {
+    "name": "basenet.7.4_bn",
+    "weight": [
+      "base_net.7.4.weight",
+      "base_net.7.4.bias",
+      "base_net.7.4.running_mean",
+      "base_net.7.4.running_var"
+    ]
+  },
+  {
+    "name": "basenet.8.0_dconv",
+    "weight": [
+      "base_net.8.0.weight"
+    ]
+  },
+  {
+    "name": "basenet.8.1_bn",
+    "weight": [
+      "base_net.8.1.weight",
+      "base_net.8.1.bias",
+      "base_net.8.1.running_mean",
+      "base_net.8.1.running_var"
+    ]
+  },
+  {
+    "name": "basenet.8.3_conv",
+    "weight": [
+      "base_net.8.3.weight"
+    ]
+  },
+  {
+    "name": "basenet.8.4_bn",
+    "weight": [
+      "base_net.8.4.weight",
+      "base_net.8.4.bias",
+      "base_net.8.4.running_mean",
+      "base_net.8.4.running_var"
+    ]
+  },
+  {
+    "name": "basenet.9.0_dconv",
+    "weight": [
+      "base_net.9.0.weight"
+    ]
+  },
+  {
+    "name": "basenet.9.1_bn",
+    "weight": [
+      "base_net.9.1.weight",
+      "base_net.9.1.bias",
+      "base_net.9.1.running_mean",
+      "base_net.9.1.running_var"
+    ]
+  },
+  {
+    "name": "basenet.9.3_conv",
+    "weight": [
+      "base_net.9.3.weight"
+    ]
+  },
+  {
+    "name": "basenet.9.4_bn",
+    "weight": [
+      "base_net.9.4.weight",
+      "base_net.9.4.bias",
+      "base_net.9.4.running_mean",
+      "base_net.9.4.running_var"
+    ]
+  },
+  {
+    "name": "basenet.10.0_dconv",
+    "weight": [
+      "base_net.10.0.weight"
+    ]
+  },
+  {
+    "name": "basenet.10.1_bn",
+    "weight": [
+      "base_net.10.1.weight",
+      "base_net.10.1.bias",
+      "base_net.10.1.running_mean",
+      "base_net.10.1.running_var"
+    ]
+  },
+  {
+    "name": "basenet.10.3_conv",
+    "weight": [
+      "base_net.10.3.weight"
+    ]
+  },
+  {
+    "name": "basenet.10.4_bn",
+    "weight": [
+      "base_net.10.4.weight",
+      "base_net.10.4.bias",
+      "base_net.10.4.running_mean",
+      "base_net.10.4.running_var"
+    ]
+  },
+  {
+    "name": "basenet.11.0_dconv",
+    "weight": [
+      "base_net.11.0.weight"
+    ]
+  },
+  {
+    "name": "basenet.11.1_bn",
+    "weight": [
+      "base_net.11.1.weight",
+      "base_net.11.1.bias",
+      "base_net.11.1.running_mean",
+      "base_net.11.1.running_var"
+    ]
+  },
+  {
+    "name": "basenet.11.3_conv",
+    "weight": [
+      "base_net.11.3.weight"
+    ]
+  },
+  {
+    "name": "basenet.11.4_bn",
+    "weight": [
+      "base_net.11.4.weight",
+      "base_net.11.4.bias",
+      "base_net.11.4.running_mean",
+      "base_net.11.4.running_var"
+    ]
+  },
+  {
+    "name": "basenet.12.0_dconv",
+    "weight": [
+      "base_net.12.0.weight"
+    ]
+  },
+  {
+    "name": "basenet.12.1_bn",
+    "weight": [
+      "base_net.12.1.weight",
+      "base_net.12.1.bias",
+      "base_net.12.1.running_mean",
+      "base_net.12.1.running_var"
+    ]
+  },
+  {
+    "name": "basenet.12.3_conv",
+    "weight": [
+      "base_net.12.3.weight"
+    ]
+  },
+  {
+    "name": "basenet.12.4_bn",
+    "weight": [
+      "base_net.12.4.weight",
+      "base_net.12.4.bias",
+      "base_net.12.4.running_mean",
+      "base_net.12.4.running_var"
+    ]
+  },
+  {
+    "name": "extras_convbias",
+    "weight": [
+      "extras.0.0.weight",
+      "extras.0.0.bias"
+    ]
+  },
+  {
+    "name": "extras_sep_dconvbias",
+    "weight": [
+      "extras.0.2.0.weight",
+      "extras.0.2.0.bias"
+    ]
+  },
+  {
+    "name": "extras_sep_convbias",
+    "weight": [
+      "extras.0.2.2.weight",
+      "extras.0.2.2.bias"
+    ]
+  },
+  {
+    "name": "cls_0_sep_dconvbias",
+    "weight": [
+      "classification_headers.0.0.weight",
+      "classification_headers.0.0.bias"
+    ]
+  },
+  {
+    "name": "cls_0_sep_convbias",
+    "weight": [
+      "classification_headers.0.2.weight",
+      "classification_headers.0.2.bias"
+    ]
+  },
+  {
+    "name": "cls_1_sep_dconvbias",
+    "weight": [
+      "classification_headers.1.0.weight",
+      "classification_headers.1.0.bias"
+    ]
+  },
+  {
+    "name": "cls_1_sep_convbias",
+    "weight": [
+      "classification_headers.1.2.weight",
+      "classification_headers.1.2.bias"
+    ]
+  },
+  {
+    "name": "cls_2_sep_dconvbias",
+    "weight": [
+      "classification_headers.2.0.weight",
+      "classification_headers.2.0.bias"
+    ]
+  },
+  {
+    "name": "cls_2_sep_convbias",
+    "weight": [
+      "classification_headers.2.2.weight",
+      "classification_headers.2.2.bias"
+    ]
+  },
+  {
+    "name": "cls_3_convbias",
+    "weight": [
+      "classification_headers.3.weight",
+      "classification_headers.3.bias"
+    ]
+  },
+  {
+    "name": "reg_0_sep_dconvbias",
+    "weight": [
+      "regression_headers.0.0.weight",
+      "regression_headers.0.0.bias"
+    ]
+  },
+  {
+    "name": "reg_0_sep_convbias",
+    "weight": [
+      "regression_headers.0.2.weight",
+      "regression_headers.0.2.bias"
+    ]
+  },
+  {
+    "name": "reg_1_sep_dconvbias",
+    "weight": [
+      "regression_headers.1.0.weight",
+      "regression_headers.1.0.bias"
+    ]
+  },
+  {
+    "name": "reg_1_sep_convbias",
+    "weight": [
+      "regression_headers.1.2.weight",
+      "regression_headers.1.2.bias"
+    ]
+  },
+  {
+    "name": "reg_2_sep_dconvbias",
+    "weight": [
+      "regression_headers.2.0.weight",
+      "regression_headers.2.0.bias"
+    ]
+  },
+  {
+    "name": "reg_2_sep_convbias",
+    "weight": [
+      "regression_headers.2.2.weight",
+      "regression_headers.2.2.bias"
+    ]
+  },
+  {
+    "name": "reg_3_convbias",
+    "weight": [
+      "regression_headers.3.weight",
+      "regression_headers.3.bias"
+    ]
+  }
+]
