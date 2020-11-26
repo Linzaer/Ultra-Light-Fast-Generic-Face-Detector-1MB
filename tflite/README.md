@@ -3,7 +3,7 @@
 TFLite model is suitable for edge computing devices.
 Please refer to the official [Android Demo](https://github.com/tensorflow/examples/tree/master/lite/examples/image_classification/android) for learning how to deploy the face detection model on your phones.
 
-![img1](https://github.com/jason9075/Ultra-Light-Fast-Generic-Face-Detector_Tensorflow-Model-Converter/blob/master/imgs/test_output_RFB.jpg)
+![Dwq3dS.jpg](https://s3.ax1x.com/2020/11/26/Dwq3dS.jpg)
 
 ## Run
 
