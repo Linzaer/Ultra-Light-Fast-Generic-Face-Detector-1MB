@@ -24,7 +24,7 @@ python3 -u train.py \
   --checkpoint_folder \
   ${model_root_path} \
   --num_workers \
-  4 \
+  0 \
   --log_dir \
   ${log_dir} \
   --cuda_index \
