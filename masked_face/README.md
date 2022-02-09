@@ -16,7 +16,7 @@ However, this model is trained only using 4095 images (2165 masked / 1930 withou
 We will experience many false positives in the actual application scenarios.
 
 This original intention inspired me to build a larger dataset to provide better open-source masked facial detection models and help the world survive the pandemic.
-The main contribution of this project is to provide balanced facial training data combining the [Wider face](https://drive.google.com/open?id=1OBY-Pk5hkcVBX1dRBOeLI4e4OCvqJRnH) and [MAFA face](https://imsg.ac.cn/research/maskedface.html) dataset. The [MAFA](https://imsg.ac.cn/research/maskedface.html) data was converted to pascal-VOC format and merged into the [wider_face_add_lm_10_10](https://drive.google.com/open?id=1OBY-Pk5hkcVBX1dRBOeLI4e4OCvqJRnH).
+The main contribution of this project is to provide balanced facial training data combining the [wider_face_add_lm_10_10](https://drive.google.com/open?id=1OBY-Pk5hkcVBX1dRBOeLI4e4OCvqJRnH) and [MAFA face](https://imsg.ac.cn/research/maskedface.html) dataset. The [MAFA](https://imsg.ac.cn/research/maskedface.html) data was converted to pascal-VOC format and merged into the [wider_face_add_lm_10_10](https://drive.google.com/open?id=1OBY-Pk5hkcVBX1dRBOeLI4e4OCvqJRnH).
 
 ## About the WIDER_MAFA_Balanced dataset
 The *Wider_MAFA_Balanced* dataset (**4.8GB**) can be downloaded at [HPI owncloud](https://owncloud.hpi.de/s/L4MUGqrpeENLbSv).
@@ -28,6 +28,7 @@ Source| Class | Train | Test |Total|
 MAFA face| masked_face | 15542 | 3922 | 19464 |
 Wider face| face | 12859 | 3219 | 16078 |
 *MAFA human body* | face | 2683 | 0 |2683
+
 *MAFA human body* indicates the extracted training samples with human body occlusions.  
 
 I use this script for converting MAFA data format to pascal VOC:
