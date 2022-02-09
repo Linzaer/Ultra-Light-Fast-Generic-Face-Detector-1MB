@@ -1,4 +1,3 @@
-[English](https://github.com/Linzaer/Ultra-Light-Fast-Generic-Face-Detector-1MB ) | [中文简体](https://github.com/Linzaer/Ultra-Light-Fast-Generic-Face-Detector-1MB/blob/master/README_CN.md)
 # Masked Face Detection 
 
 ![img1](https://github.com/yanghaojin/Ultra-Light-Fast-Generic-Face-Detector-1MB/blob/master/masked_face/readme_imgs/img4.jpeg)
