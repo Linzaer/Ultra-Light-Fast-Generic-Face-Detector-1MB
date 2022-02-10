@@ -156,6 +156,7 @@ sh train-version-slim.sh or sh train-version-RFB.sh
  - [faceDetect-ios](https://github.com/Ian778/faceDetect-ios)
  - [Android-FaceDetection-UltraNet-MNN](https://github.com/jackweiwang/Android-FaceDetection-UltraNet-MNN)
  - [Ultra-Tensorflow-Model-Converter](https://github.com/jason9075/Ultra-Light-Fast-Generic-Face-Detector_Tensorflow-Model-Converter)
+ - [UltraFace TNN C++ Demo](https://github.com/DefTruth/lite.ai.toolkit/blob/main/lite/tnn/cv/tnn_ultraface.cpp)
   
 ##  Reference
 - [pytorch-ssd](https://github.com/qfgaohao/pytorch-ssd)
