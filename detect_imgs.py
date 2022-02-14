@@ -53,13 +53,13 @@ net.load(model_path)
 if not os.path.exists(result_path):
     os.makedirs(result_path)
 listdir = os.listdir(args.path)
-sum = 0
+total_sum = 0
 for file_path in listdir:
     img_path = os.path.join(args.path, file_path)
     orig_image = cv2.imread(img_path)
     image = cv2.cvtColor(orig_image, cv2.COLOR_BGR2RGB)
     boxes, labels, probs = predictor.predict(image, args.candidate_size / 2, args.threshold)
-    sum += boxes.size(0)
+    total_sum += boxes.size(0)
     for i in range(boxes.size(0)):
         box = boxes[i, :]
         cv2.rectangle(orig_image, (box[0], box[1]), (box[2], box[3]), (0, 0, 255), 2)
@@ -69,4 +69,4 @@ for file_path in listdir:
     cv2.putText(orig_image, str(boxes.size(0)), (30, 30), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 0, 255), 2)
     cv2.imwrite(os.path.join(result_path, file_path), orig_image)
     print(f"Found {len(probs)} faces. The output image is {result_path}")
-print(sum)
+print(total_sum)
