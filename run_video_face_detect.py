@@ -20,9 +20,9 @@ parser.add_argument('--candidate_size', default=1000, type=int,
                     help='nms candidate size')
 parser.add_argument('--path', default="imgs", type=str,
                     help='imgs dir')
-parser.add_argument('--test_device', default="cuda:0", type=str,
+parser.add_argument('--test_device', default="cpu", type=str,
                     help='cuda:0 or cpu')
-parser.add_argument('--video_path', default="/home/linzai/Videos/video/16_1.MP4", type=str,
+parser.add_argument('--video_path', default="C:/Users/aliam/Desktop/people.MP4", type=str,
                     help='path of video')
 args = parser.parse_args()
 
@@ -77,7 +77,7 @@ while True:
     for i in range(boxes.size(0)):
         box = boxes[i, :]
         label = f" {probs[i]:.2f}"
-        cv2.rectangle(orig_image, (box[0], box[1]), (box[2], box[3]), (0, 255, 0), 4)
+        cv2.rectangle(orig_image, (int(box[0]), int(box[1])), (int(box[2]), int(box[3])), (0, 255, 0), 4)
 
         # cv2.putText(orig_image, label,
         #             (box[0], box[1] - 10),
