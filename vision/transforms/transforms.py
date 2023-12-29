@@ -259,7 +259,7 @@ class RandomSampleCrop(object):
     """
 
     def __init__(self):
-        self.sample_options = (
+        self.sample_options = np.array([
             # using entire original input image
             None,
             # sample a patch s.t. MIN jaccard w/ obj in .1,.3,.4,.7,.9
@@ -269,7 +269,7 @@ class RandomSampleCrop(object):
             (0.9, None),
             # randomly sample a patch
             (None, None),
-        )
+        ], dtype=object)
 
     def __call__(self, image, boxes=None, labels=None):
         height, width, _ = image.shape
@@ -364,7 +364,7 @@ class RandomSampleCrop_v2(object):
     """
 
     def __init__(self):
-        self.sample_options = (
+        self.sample_options = np.array([
             # using entire original input image
             None,
             # sample a patch s.t. MIN jaccard w/ obj in .1,.3,.4,.7,.9
@@ -374,7 +374,7 @@ class RandomSampleCrop_v2(object):
             (1, None),
             (1, None),
             (1, None),
-        )
+        ], dtype=object)
 
     def __call__(self, image, boxes=None, labels=None):
         height, width, _ = image.shape
